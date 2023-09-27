@@ -16,13 +16,15 @@ const outfit = Outfit({
   weight: ['400', '500', '600',],
   style: ['normal'],
   subsets: ['latin'],
+  variable: '--font-outfit',
   display: 'swap',
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const plus_jakarta_sans = Plus_Jakarta_Sans({
   weight: ['500', '600'],
   style: ['normal'],
   subsets: ['latin'],
+  variable: '--plus-jakarta-sans',
   display: 'swap',
 });
 
@@ -53,7 +55,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${outfit.className} ${plusJakartaSans.className}`}>
+      <body className={`${outfit.variable} ${plus_jakarta_sans.variable}`}>
         {/* Maybe need it later */}
         {/* <Navbar /> */}
         {children}

@@ -33,7 +33,7 @@ export default function HeaderHome() {
               THE PREMIER SOURCE OF BLOCKCHAIN INTELLIGENCE
             </div>
             <h1 className={styles.title}>
-              The Bloomberg Terminal for <span> crypto and blockchain</span>
+              The Bloomberg Terminal for<span> crypto and blockchain</span>
             </h1>
           </div>
 

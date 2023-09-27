@@ -21,10 +21,10 @@
 
 body {
   color: var(--text-color);
-  font-size: var(--font-size);
-  font-family: var(--main-font);
+  font-size: 18px;
+  font-family: var(--font-outfit);
   background-color: var(--bg-color-dark);
-  line-height: 1.6;
+  line-height: 1.5;
   min-width: 320px;
   position: relative;
   overflow-x: hidden;
