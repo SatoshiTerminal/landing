@@ -2,7 +2,7 @@
 import './globals.css';
 import 'animate.css';
 import type { Metadata } from 'next';
-import { Outfit } from 'next/font/google';
+import { Outfit, Plus_Jakarta_Sans  } from 'next/font/google';
 
 // ==== Components ====
 // Navbar srool to sections
@@ -10,12 +10,23 @@ import { Outfit } from 'next/font/google';
 
 import Footer from '@/components/Footer';
 
+// Fonts here
+
 const outfit = Outfit({
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600',],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
 });
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  weight: ['500', '600'],
+  style: ['normal'],
+  subsets: ['latin'],
+  display: 'swap',
+});
+
+// Metadata for SEO
 
 export const metadata: Metadata = {
   title: 'Satoshi Terminal',
@@ -42,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={outfit.className}>
+      <body className={`${outfit.className} ${plusJakartaSans.className}`}>
         {/* Maybe need it later */}
         {/* <Navbar /> */}
         {children}

@@ -1,6 +1,7 @@
 :root {
   /* Global color and fonts*/
-  --main-font: 'Outfit', sans-serif;
+
+  /* Colors */
   --primary-color: #4FCFBD;
   --secondary-color: #599FCF;
   --bg-color-dark: #040813;
@@ -8,7 +9,7 @@
   --link-color: #4FCFBD;
   --hover: #599FCF;
   --font-size: 18px;
-  --text-color: #e3e0e0;
+  --text-color: #ffffff;
   --text-dark: #1d1d1d;
   --white: #ffffff;
   --transition: all 0.3s ease;
