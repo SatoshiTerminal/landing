@@ -1,12 +1,12 @@
 :root {
   /* Global color and fonts*/
-  --main-font: 'Saira', sans-serif;
-  --primary-color: #06d889;
-  --secondary-color: #30dfea;
-  --bg-color-dark: #141418;
-  --bg-color-dark2: #0f0f0f;
-  --link-color: #06d889;
-  --hover: #30dfea;
+  --main-font: 'Outfit', sans-serif;
+  --primary-color: #4FCFBD;
+  --secondary-color: #599FCF;
+  --bg-color-dark: #040813;
+  --bg-color-dark2: #141521;
+  --link-color: #4FCFBD;
+  --hover: #599FCF;
   --font-size: 18px;
   --text-color: #e3e0e0;
   --text-dark: #1d1d1d;
@@ -135,14 +135,16 @@ div {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+/* Color for text selection */
+::selection {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
 button {
   cursor: pointer;
   border: none;
   outline: none;
-}
-
-.invisible {
-  visibility: hidden !important;
 }
 
 .primary-btn {
@@ -185,6 +187,7 @@ button {
   transform: skewX(45deg) scale(1, 1);
 }
 
+/* Additionals */
 .cover {
   object-fit: cover;
 }
@@ -196,4 +199,8 @@ button {
 
 .mb-0 {
   margin-bottom: 0 !important;
+}
+
+.invisible {
+  visibility: hidden !important;
 }

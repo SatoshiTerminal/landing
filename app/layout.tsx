@@ -2,29 +2,32 @@
 import './globals.css';
 import 'animate.css';
 import type { Metadata } from 'next';
-import { Saira } from 'next/font/google';
-// Origibal navbar
-// import Navbar from '@/components/Navbar';
-import Navbar from '@/components/navbar-scroll-section/NavbarScrollTo';
+import { Outfit } from 'next/font/google';
+
+// ==== Components ====
+// Navbar srool to sections
+// import Navbar from '@/components/navbar-scroll-section/NavbarScrollTo';
+
 import Footer from '@/components/Footer';
 
-const saira = Saira({
-  weight: ['400', '500', '600', '700', '800'],
+const outfit = Outfit({
+  weight: ['400', '500', '600', '700'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Next 13 Starter Template',
-  description: 'Next 13 Starter Template meta descriptions',
+  title: 'Satoshi Terminal',
+  description:
+    'The Bloomberg Terminal for Crypto. Allowing Wall St to research crypto the same way they research stocks and bonds. The world’s first crypto research platform for Wall Street, designed & developed by former Bloomberg Terminal engineers.',
   openGraph: {
-    title: 'Next 13 Starter Template',
+    title: 'Satoshi Terminal',
     description:
-      'Next 13 Starter Template open graph descriptions for social media',
+      'The Bloomberg Terminal for Crypto. Allowing Wall St to research crypto the same way they research stocks and bonds. The world’s first crypto research platform for Wall Street, designed & developed by former Bloomberg Terminal engineers.',
     images: [
       {
-        url: '/images/next-js--strter.jpg',
+        url: '/images/home-meta__img.jpg',
         width: 1280,
         height: 720,
       },
@@ -39,10 +42,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={saira.className}>
-        <Navbar />
+      <body className={outfit.className}>
+        {/* Maybe need it later */}
+        {/* <Navbar /> */}
         {children}
-        <Footer />
+        {/* Vercel Analytics */}
         {/* <Analytics /> */}
       </body>
     </html>
