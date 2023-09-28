@@ -191,6 +191,14 @@ button {
   transform: skewX(45deg) scale(1, 1);
 }
 
+@media only screen and (max-width: 992px) {
+  .primary-btn {
+    min-width: 180px;
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+}
+
 /* Additionals */
 .cover {
   object-fit: cover;

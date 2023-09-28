@@ -27,10 +27,13 @@
 .content {
   position: relative;
   z-index: 2;
+  padding: 50px 0;
 }
 
 .logo {
   margin-bottom: 20px;
+  width: 250px;
+  height: 106px;
 }
 
 .description {
@@ -53,6 +56,12 @@
 
 .titleMain {
   margin-left: -300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
 }
 
 .subtitle {
@@ -61,9 +70,8 @@
   font-size: 22px;
   font-weight: 500;
   text-transform: uppercase;
-  margin-bottom: 10px;
   letter-spacing: 2.5px;
-  padding: 10px;
+  padding: 10px 20px;
   background: rgba(79, 207, 189, 0.35);
 }
 
@@ -93,4 +101,68 @@
   display: flex;
   gap: 65px;
   justify-content: center;
+}
+
+
+@media only screen and (max-width: 1300px) {
+  .logo {
+    width: 200px;
+    height: 85px;
+  }
+
+  .description {
+    width: 600px;
+    height: 505px;
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+  }
+
+  .titleMain {
+    margin-left: -250px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 55px;
+  }
+
+  .textDesc {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  
+
+  .titleMain {
+    margin-left: -150px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  .titleMain {
+    margin-left: 0;
+  }
+
+  .description {
+    padding: 40px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
 }
