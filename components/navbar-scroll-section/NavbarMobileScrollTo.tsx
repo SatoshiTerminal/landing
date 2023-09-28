@@ -1,16 +1,18 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import styles from './navbarMobile.module.css';
+import styles from './NavbarMobileScrollTo.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 // Data
-import { navbarLinks } from '@/data/navbarData';
+import { navbarScrollTo } from '@/data/navbarScrollTo';
 
 const NavbarMobile = () => {
   const pathname = usePathname();
+
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const [isOpen, setIsOpen] = useState(false);
   // function close menu on press escape key
@@ -28,6 +30,44 @@ const NavbarMobile = () => {
       window.removeEventListener('keydown', handleEscape);
     };
   }, []);
+
+  // Scroll to section on click
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    // first prevent the default behavior
+    e.preventDefault();
+    // get the href and remove everything before the hash (#)
+    const href = e.currentTarget.href;
+    const targetId = href.replace(/.*\#/, '');
+    // get the element by id and use scrollIntoView
+    const elem = document.getElementById(targetId);
+    elem?.scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
+  // Add class active to Link on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollPosition(currentScrollY);
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollPosition >= sectionTop - sectionHeight / 3) {
+          const sectionId = section.getAttribute('id');
+          document.querySelectorAll(`.${styles.menuList} a`).forEach((link) => {
+            link.classList.remove(`${styles.active}`);
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add(`${styles.active}`);
+            }
+          });
+        }
+      });
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrollPosition]);
 
   return (
     <nav className={styles.navbarMobile}>
@@ -72,15 +112,13 @@ const NavbarMobile = () => {
             </Link>
           </div>
           {/* Menu links */}
-          {navbarLinks.map((link) => {
-            return (
+          {navbarScrollTo.map((link) => {
+             return (
               <li key={link.id}>
                 <Link
-                  className={`${styles.link} ${
-                    pathname == link.url ? `${styles.active}` : ''
-                  }`}
-                  onClick={() => setIsOpen(!isOpen)}
-                  href={link.url}
+                  className={styles.link}
+                  href={link.scrollTo}
+                  onClick={handleScroll}
                 >
                   {link.title}
                 </Link>

@@ -7,6 +7,7 @@ import styles from './SectionHeader.module.css';
 import { IoTriangleSharp } from 'react-icons/io5';
 
 type SectionHeaderProps = {
+  cssClassName?: string;
   subtitle: string;
   titleBeforeAccent: string;
   titleAccent: string;
@@ -15,6 +16,7 @@ type SectionHeaderProps = {
 };
 
 export default function SectionHeader({
+  cssClassName,
   subtitle,
   titleBeforeAccent,
   titleAccent,
@@ -29,7 +31,7 @@ export default function SectionHeader({
   });
 
   return (
-    <div ref={ref} className={styles.sectionHeader}>
+    <div ref={ref} className={`${styles.sectionHeader} ${cssClassName}`}>
       <div
         className={`${styles.sectionSubtitle} ${
           inView ? `animate__animated animate__flash animate__slow` : 'invisible'

@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 30px;
   max-width: 706px;
+  margin-bottom: 50px;
 }
 
 .sectionSubtitle {

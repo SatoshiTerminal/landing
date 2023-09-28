@@ -5,7 +5,7 @@ import styles from './navbarScrollTo.module.css';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 // Components
-import NavbarMobile from './NavbarMobile';
+import NavbarMobile from './NavbarMobileScrollTo';
 
 // Data
 import { navbarScrollTo } from '@/data/navbarScrollTo';
