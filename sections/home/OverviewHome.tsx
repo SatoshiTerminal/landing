@@ -5,7 +5,9 @@ import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 
 // Data
-import { overviewHomeList } from '@/data/overviewHome';
+import { overviewHomeList } from '@/data/overviewHomeData';
+import { overviewHomeList2Left } from '@/data/overviewHomeData';
+import { overviewHomeList2Right } from '@/data/overviewHomeData';
 
 // Components
 import SectionHeader from '@/components/SectionHeader';
@@ -13,7 +15,7 @@ import SectionHeader from '@/components/SectionHeader';
 export default function OverviewHome() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    rootMargin: '-200px 0px',
+    rootMargin: '-100px 0px',
   });
   return (
     <section className={`${styles.overview} home-sect-p`}>
@@ -35,7 +37,7 @@ export default function OverviewHome() {
       />
       <div className="container">
         {/* Content top start */}
-        <div className={styles.content}>
+        <div className={styles.contentTop}>
           {/* Left side */}
           <div className={styles.contentLeft}>
             <SectionHeader
@@ -74,7 +76,9 @@ export default function OverviewHome() {
                 width={417}
                 height={331}
                 className={`${styles.imgReactangle1} ${
-                  inView ? `animate__animated animate__fadeIn animate__slower` : 'invisible'
+                  inView
+                    ? `animate__animated animate__fadeIn animate__slower`
+                    : 'invisible'
                 }`}
               />
               <Image
@@ -82,7 +86,9 @@ export default function OverviewHome() {
                 alt="overview"
                 fill={true}
                 className={`${styles.imgReactangle2} ${
-                  inView ? `animate__animated animate__flash animate__slower` : 'invisible'
+                  inView
+                    ? `animate__animated animate__flash animate__slower`
+                    : 'invisible'
                 }`}
               />
               <Image
@@ -91,7 +97,9 @@ export default function OverviewHome() {
                 width={466}
                 height={231}
                 className={`${styles.imgMain} ${
-                  inView ? `animate__animated animate__flipInX animate__slower` : 'invisible'
+                  inView
+                    ? `animate__animated animate__flipInX animate__slower`
+                    : 'invisible'
                 }`}
               />
             </div>
@@ -99,6 +107,92 @@ export default function OverviewHome() {
           {/* contentRight end */}
         </div>
         {/* Content top end */}
+        {/* Content bottom start */}
+        <div className={styles.contentBottom}>
+          {/* Left side */}
+          <div className={styles.contentLeft}>
+            <div className={styles.imagesGroup}>
+              <Image
+                src="/images/home/overview/rectangle-cut-small.svg"
+                alt="overview"
+                width={417}
+                height={331}
+                className={styles.imgReactangle1}
+              />
+              <Image
+                src="/images/home/overview/rectangle-cut-large.svg"
+                alt="overview"
+                fill={true}
+                className={styles.imgReactangle2}
+              />
+              <Image
+                src="/images/home/overview/satoshi-terminal-monitor.png"
+                alt="overview"
+                width={422}
+                height={333}
+                className={styles.imgMain2}
+              />
+            </div>
+          </div>
+          {/* contentLeft end */}
+          {/* Right side */}
+          <div className={styles.contentRight}>
+            <div className={styles.headerOvervier}>
+              <h2 className={styles.titleContent}>
+                Engineered and designed by former
+                <span> Bloomberg Terminal</span> engineers
+              </h2>
+              <p className={styles.descOverview}>
+                The Satoshi Terminal is a groundbreaking financial research and
+                trading platform. It is a first-of-its-kind product that
+                combines features and functionality like those of the Bloomberg
+                Terminal with the inclusion of data on the cryptocurrency
+                industry.
+              </p>
+            </div>
+
+            <div className={styles.listBox}>
+              {/* list left */}
+              <ul className={styles.list2}>
+                {overviewHomeList2Left.map((item, index) => {
+                  return (
+                    <li key={index} className={styles.listItem2}>
+                      <Image
+                        src="/images/home/overview/icons/star.svg"
+                        alt={item.title}
+                        height={27}
+                        width={27}
+                        quality={100}
+                        className={styles.listItem2Icon}
+                      />
+                      <div className={styles.item2Title}>{item.title}</div>
+                    </li>
+                  );
+                })}
+              </ul>
+              {/* list right */}
+              <ul className={styles.list2}>
+                {overviewHomeList2Right.map((item, index) => {
+                  return (
+                    <li key={index} className={styles.listItem2}>
+                      <Image
+                        src="/images/home/overview/icons/star.svg"
+                        alt={item.title}
+                        height={27}
+                        width={27}
+                        quality={100}
+                        className={styles.listItem2Icon}
+                      />
+                      <div className={styles.item2Title}>{item.title}</div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+          {/* contentRight end */}
+        </div>
+        {/* Content bottom end */}
       </div>
     </section>
   );

@@ -1,8 +1,7 @@
-type overviewHomeList1= {
+type overviewHomeList1 = {
   url: string;
   title: string;
 }[];
-
 
 export const overviewHomeList: overviewHomeList1 = [
   {
@@ -25,4 +24,32 @@ export const overviewHomeList: overviewHomeList1 = [
     url: '/images/home/overview/icons/icon-5.svg',
     title: 'Institutional quality interface',
   },
-]
+];
+
+type overviewHomeList2 = {
+  title: string;
+}[];
+
+export const overviewHomeList2Left: overviewHomeList2 = [
+  {
+    title: 'Portfolio optimization tools',
+  },
+  {
+    title: 'Risk analytics',
+  },
+  {
+    title: 'Institutional grade tools tailored',
+  },
+];
+
+export const overviewHomeList2Right: overviewHomeList2 = [
+  {
+    title: 'Enhanced data delivery',
+  },
+  {
+    title: 'Comprehensive data libraries',
+  },
+  {
+    title: 'Innovative Terminal',
+  },
+];
