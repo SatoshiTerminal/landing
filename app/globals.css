@@ -10,7 +10,6 @@
   --bg-color-dark2: #141521;
   --link-color: #4FCFBD;
   --hover: #599FCF;
-  --font-size: 18px;
   --text-color: #ffffff;
   --text-dark: #1d1d1d;
   --white: #ffffff;
@@ -64,8 +63,10 @@ svg {
 }
 /* ==== Containers end ====*/
 
+/* Section padding for home page  */
+
 .home-sect-p {
-  padding: 100px 0;
+  padding: 120px 0;
 }
 @media only screen and (max-width: 1200px) {
   .home-sect-p {
@@ -74,7 +75,7 @@ svg {
 }
 @media only screen and (max-width: 768px) {
   .home-sect-p {
-    padding: 40px 0;
+    padding: 50px 0;
   }
 }
 @media only screen and (max-width: 500px) {

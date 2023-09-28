@@ -1,0 +1,15 @@
+.overview {
+  position: relative;
+}
+
+.bitcoinLeft {
+  position: absolute;
+  top: 140px;
+  left: 20px;
+}
+
+.shieldRight {
+  position: absolute;
+  top: 140px;
+  right: 20px;
+}

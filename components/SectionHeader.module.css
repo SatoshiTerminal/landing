@@ -1,0 +1,60 @@
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 706px;
+}
+
+.sectionSubtitle {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  gap: 10px;
+}
+
+.subtitleIcon {
+  line-height: 0;
+  font-size: 30px;
+  color: var(--primary-color);
+  rotate: -90deg;
+}
+
+.sectionTitle {
+  font-size: 50px;
+  line-height: 1.3;
+  font-weight: 600;
+  font-family: var(--plus-jakarta-sans);
+}
+.sectionTitle span {
+  color: var(--primary-color);
+}
+
+@media only screen and (max-width: 1300px) {
+
+  .subtitleIcon {
+    font-size: 25px;
+  }
+
+  .sectionTitle {
+    font-size: 45px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+    .sectionSubtitle {
+      font-size: 20px;
+    }
+    .subtitleIcon {
+      font-size: 22px;
+    }
+  
+    .sectionTitle {
+      font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+  .sectionTitle {
+    font-size: 35px;
+  }
+}

@@ -4,6 +4,7 @@ import styles from './HomePage.module.css';
 
 // Sections
 import HeaderHome from '@/sections/home/HeaderHome';
+import OverviewHome from '@/sections/home/OverviewHome';
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
       {/* Header */}
       <HeaderHome />
       <main className={styles.main}>
-        {/* Section */}
+        {/* Section Overview */}
+        <OverviewHome />
       </main>
     </React.Fragment>
   );
