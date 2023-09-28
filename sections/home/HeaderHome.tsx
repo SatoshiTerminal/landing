@@ -20,7 +20,7 @@ export default function HeaderHome() {
           height={106}
           quality={100}
         />
-
+        {/* Description */}
         <div className={styles.description}>
           <Image
             className={styles.descriptionBg}
@@ -41,6 +41,11 @@ export default function HeaderHome() {
             We are planning to deploy a cryptocurrency version of the Bloomberg
             terminal, ingineered in the 1980’s by Michael Bloomberg{' '}
           </p>
+        </div>
+        {/* Buttons */}
+        <div className={styles.buttonsGroup}>
+          <button className="primary-btn">Join wating list</button>
+          <button className="primary-btn">Learn more</button>
         </div>
       </div>
     </header>

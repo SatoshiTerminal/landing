@@ -1,6 +1,8 @@
 :root {
-  /* Global color and fonts*/
-
+  
+  /* Font veriables inside app/layout.tsx */
+  /* --font-outfit */
+  /* --plus-jakarta-sans */
   /* Colors */
   --primary-color: #4FCFBD;
   --secondary-color: #599FCF;
@@ -151,22 +153,23 @@ button {
 .primary-btn {
   position: relative;
   display: inline-block;
-  /* display: flex;
-  align-items: center; */
-  font-weight: 600;
-  font-size: 16px;
+  font-family: var(--font-outfit);
+  min-width: 215px;
+  font-weight: 500;
+  font-size: 18px;
   letter-spacing: 0.5px;
   color: var(--text-dark);
-  border-radius: 5px;
   border: 1px solid var(--primary-color);
   background-color: var(--primary-color);
-  padding: 12px 25px;
+  padding: 18px 25px;
   transition: 0.5s;
   overflow: hidden;
   z-index: 10;
+  text-transform: uppercase;
+  
 }
 .primary-btn:hover {
-  color: var(--hover);
+  color: var(--text-color);
 }
 .primary-btn::after {
   position: absolute;
@@ -179,7 +182,7 @@ button {
   width: 200%;
   bottom: 0;
   border-radius: 2px;
-  background-color: #08232b;
+  background-color: var(--secondary-color);
   transform: skewX(45deg) scale(0, 1);
   z-index: -1;
   transition: all 0.5s ease-out 0s;
