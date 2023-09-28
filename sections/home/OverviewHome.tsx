@@ -1,5 +1,7 @@
+'use client';
 import React from 'react';
 import styles from './OverviewHome.module.css';
+import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 
 // Data
@@ -9,6 +11,10 @@ import { overviewHomeList } from '@/data/overviewHome';
 import SectionHeader from '@/components/SectionHeader';
 
 export default function OverviewHome() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '-200px 0px',
+  });
   return (
     <section className={`${styles.overview} home-sect-p`}>
       <Image
@@ -28,9 +34,10 @@ export default function OverviewHome() {
         quality={100}
       />
       <div className="container">
-        <div className={styles.top}>
+        {/* Content top start */}
+        <div className={styles.content}>
           {/* Left side */}
-          <div className={styles.topLeft}>
+          <div className={styles.contentLeft}>
             <SectionHeader
               subtitle="Overview"
               titleBeforeAccent="The Satoshi Terminal is the first"
@@ -57,35 +64,41 @@ export default function OverviewHome() {
               })}
             </ul>
           </div>
-          {/* topLeft end */}
+          {/* contentLeft end */}
           {/* Right side */}
-          <div className={styles.topRight}>
-            <div className={styles.imagesGroup}>
+          <div className={styles.contentRight}>
+            <div ref={ref} className={styles.imagesGroup}>
               <Image
                 src="/images/home/overview/rectangle-cut-small.svg"
                 alt="overview"
                 width={417}
                 height={331}
-                className={styles.imgReactangle1}
+                className={`${styles.imgReactangle1} ${
+                  inView ? `animate__animated animate__fadeIn animate__slower` : 'invisible'
+                }`}
               />
               <Image
                 src="/images/home/overview/rectangle-cut-large.svg"
                 alt="overview"
                 fill={true}
-                className={styles.imgReactangle2}
+                className={`${styles.imgReactangle2} ${
+                  inView ? `animate__animated animate__flash animate__slower` : 'invisible'
+                }`}
               />
               <Image
                 src="/images/home/overview/satoshi-keyboard.png"
                 alt="overview"
                 width={466}
                 height={231}
-                className={styles.imgMain}
+                className={`${styles.imgMain} ${
+                  inView ? `animate__animated animate__flipInX animate__slower` : 'invisible'
+                }`}
               />
             </div>
           </div>
-          {/* topRight end */}
+          {/* contentRight end */}
         </div>
-        {/* top end */}
+        {/* Content top end */}
       </div>
     </section>
   );

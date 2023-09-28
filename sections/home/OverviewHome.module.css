@@ -15,14 +15,14 @@
   right: 20px;
 }
 
-.top {
+.content {
   display: flex;
   justify-content: space-between;
   gap: 50px;
   align-items: end; 
 }
 
-/* .topLeft {
+/* .contentLeft {
   flex-basis: 40%;
 } */
 
@@ -46,7 +46,7 @@
   font-weight: 500;
 }
 
-/* .topRight {
+/* .contentRight {
   flex-basis: 60%;
 } */
 
@@ -76,7 +76,6 @@
 .imgMain {
   width: 466px;
   height: 231px;
-  transform: rotate(-20deg);
   z-index: 3;
 }
 
@@ -98,7 +97,7 @@
 
 @media only screen and (max-width: 1440px) {
 
-  .top {
+  .content {
     align-items: center;
   }
 
@@ -133,9 +132,26 @@
     height: 150px;
   }
 
-  .top {
+  .content {
     flex-direction: column;
     gap: 50px;
+  }
+
+  .imagesGroup {
+    width: 600px;
+    height: 470px;
+  }
+
+  .imgReactangle1 {
+    width: 350px;
+    height: 250px;
+    left: -60px;
+    bottom: -60px;
+  }
+
+  .imgMain {
+    width: 450px;
+    height: 225px;
   }
 
   .list1 {
@@ -143,5 +159,48 @@
     gap: 20px;
   }
 
+}
+
+@media only screen and (max-width: 992px) {
+  .imgAbsolute1, .imgAbsolute2 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .imagesGroup {
+    width: 100%;
+    height: auto;
+  }
+
+  .imgReactangle1 {
+    width: 350px;
+    height: 250px;
+    left: -60px;
+    bottom: -60px;
+  }
+
+  .imgMain {
+    width: 450px;
+    height: 225px;
+  }
+
+
+  .listItem1Icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .listItem1Icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .item1Title {
+    font-size: 18px;
+  }
 }
 
