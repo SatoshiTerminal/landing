@@ -35,10 +35,12 @@ body {
   scroll-behavior: smooth;
 }
 
+/* For React icons */
 svg {
   line-height: 0;
 }
 
+/* ==== Containers start ====*/
 .container {
   max-width: 1440px;
   margin: 0 auto;
@@ -49,7 +51,6 @@ svg {
     max-width: 1200px;
   }
 }
-
 @media only screen and (max-width: 1200px) {
   .container {
     max-width: 992px;
@@ -61,46 +62,24 @@ svg {
   margin: 0 auto;
   padding: 0 15px;
 }
+/* ==== Containers end ====*/
 
 .home-sect-p {
   padding: 100px 0;
 }
-
-.section-title {
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 30px;
-  color: var(--primary-color);
-}
-
 @media only screen and (max-width: 1200px) {
   .home-sect-p {
     padding: 80px 0;
   }
-
-  .section-title {
-    font-size: 32px;
-    margin-bottom: 25px;
-  }
 }
-
 @media only screen and (max-width: 768px) {
   .home-sect-p {
     padding: 40px 0;
-  }
-
-  .section-title {
-    font-size: 30px;
-    margin-bottom: 20px;
   }
 }
 @media only screen and (max-width: 500px) {
   .home-sect-p {
     padding: 30px 0;
-  }
-
-  .section-title {
-    font-size: 24px;
   }
 }
 
@@ -190,7 +169,6 @@ button {
 .primary-btn:hover::after {
   transform: skewX(45deg) scale(1, 1);
 }
-
 @media only screen and (max-width: 992px) {
   .primary-btn {
     min-width: 180px;
