@@ -134,7 +134,7 @@ button {
   position: relative;
   display: inline-block;
   font-family: var(--font-outfit);
-  min-width: 215px;
+  width: 215px;
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.5px;

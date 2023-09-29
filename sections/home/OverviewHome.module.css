@@ -107,14 +107,10 @@
   color: var(--primary-color);
 }
 
-.descOverview {
-  font-size: 20px;
-  font-weight: 500;
-}
-
 .listBox {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .list2 {
@@ -169,6 +165,12 @@
   }
 }
 
+@media only screen and (max-width: 1300px) {
+  .titleContent {
+    font-size: 45px;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .imgAbsolute1 {
     top: 300px;
@@ -209,15 +211,28 @@
     gap: 20px;
   }
 
+  .listBox {
+    justify-content: center;
+    gap: 100px;
+  }
+
 }
 
 @media only screen and (max-width: 992px) {
   .imgAbsolute1, .imgAbsolute2 {
     display: none;
   }
+
+  .titleContent {
+    font-size: 40px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
+
+  .titleContent {
+    font-size: 35px;
+  }
 
   .imagesGroup {
     width: 550px;
@@ -235,9 +250,17 @@
     width: 35px;
     height: 35px;
   }
+
+  .listBox {
+    gap: 40px;
+  }
 }
 
 @media only screen and (max-width: 630px) {
+  .contentTop {
+    margin-bottom: 100px;
+  }
+
   .imagesGroup {
     width: 100%;
     height: auto;
@@ -247,13 +270,23 @@
     display: none;
   }
 
-  .imgMain {
+  .imgMain, .imgMain2 {
     width: 100%;
     height: auto;
+  }
+
+  .listBox {
+    flex-direction: column;
+    justify-content: start;
+    gap: 30px;
   }
 }
 
 @media only screen and (max-width: 576px) {
+  .contentTop {
+    margin-bottom: 50px;
+  }
+
   .listItem1Icon {
     width: 30px;
     height: 30px;
@@ -261,6 +294,10 @@
 
   .item1Title {
     font-size: 18px;
+  }
+
+  .headerOvervier {
+    margin-bottom: 30px;
   }
 }
 
