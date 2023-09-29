@@ -23,9 +23,47 @@
 .contentGoals {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 110px;
 }
 
+.goalsItem {
+  border-radius: 20px;
+  padding: 20px;
+  background-color:#2c2c35;
+}
+
+.numberBg {
+  position: relative;
+  width: 92px;
+  height: 100px;
+}
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.centerGoals {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerSubtitle {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.centerTitle {
+  font-size: 35px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
 
 @media only screen and (max-width: 1440px) {
   .header {

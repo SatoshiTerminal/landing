@@ -52,20 +52,37 @@ export default function OurVision() {
         </div>
         {/* Header end */}
 
-        {/* Content start */}
-
+        {/* Goals start */}
         <div className={styles.ourGoals}>
           <div className={styles.contentGoals}>
-            {/* ourVisionGoalsData extract the first three elements from this array */}
+            {/*  first three elements from this array */}
             {ourVisionGoalsData.slice(0, 3).map((goal) => (
               <div key={goal.id} className={styles.goalsItem}>
+                <div className={styles.numberItem}>
+                  <Image
+                    src="/images/home/our-vision/number-bg.svg"
+                    alt="icon"
+                    quality={100}
+                    width={92}
+                    height={100}
+                    className={styles.numberBg}
+                  />
+                  <span className={styles.number}>{goal.id}</span>
+                </div>
+
                 <div className={styles.goalDesc}>
-                  <span>{goal.id}</span>
                   <h3>{goal.title}</h3>
                   <p>{goal.text}</p>
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className={styles.centerGoals}>
+            <div className={styles.centerSubtitle}>Join us</div>
+            <h3 className={styles.centerTitle}>Our goals</h3>
+          </div>
+          <div className={styles.contentGoals}>
             {/* next three elements reversed */}
             {ourVisionGoalsData
               .slice(3, 6)
@@ -80,7 +97,8 @@ export default function OurVision() {
                 </div>
               ))}
           </div>
-        </div>
+        </div>          
+        {/* Goals end */}
       </div>
     </section>
   );
