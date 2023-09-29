@@ -8,3 +8,53 @@
   justify-content: space-between;
 }
 
+.headerImg {
+  width: 600px;
+  height: 428px;
+}
+
+.ourGoals {
+  padding: 30px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(35, 28, 28, 0.8) 0%, #0b0b0b 100%);
+}
+
+.contentGoals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+@media only screen and (max-width: 1440px) {
+  .header {
+    align-items: center;
+  }
+
+  .headerImg {
+    width: 500px;
+    height: 357px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .headerImg {
+    width: 400px;
+    height: 286px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .header {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .headerImg {
+    width: 100%;
+    height: auto;
+  }
+}

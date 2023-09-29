@@ -7,6 +7,9 @@ import styles from './OurVisionHome.module.css';
 // Components
 import SectionHeader from '@/components/SectionHeader';
 
+// Data
+import { ourVisionGoalsData } from '@/data/ourVisionGoalsData';
+
 export default function OurVision() {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -35,20 +38,49 @@ export default function OurVision() {
               Read more
             </a>
           </div>
-          <div ref={ref} className={styles.headerImg}>
-            <Image
-              src="/images/home/our-vision/bull-run.svg"
-              alt="our vision"
-              width={600}
-              height={428}
-              quality={100}
-              className={inView ? `rotateUp` : 'invisible'}
-            />
-          </div>
+          <Image
+            ref={ref}
+            src="/images/home/our-vision/bull-run.svg"
+            alt="our vision"
+            width={600}
+            height={428}
+            quality={100}
+            className={`${styles.headerImg} ${
+              inView ? `rotateUp` : 'invisible'
+            }`}
+          />
         </div>
         {/* Header end */}
 
         {/* Content start */}
+
+        <div className={styles.ourGoals}>
+          <div className={styles.contentGoals}>
+            {/* ourVisionGoalsData extract the first three elements from this array */}
+            {ourVisionGoalsData.slice(0, 3).map((goal) => (
+              <div key={goal.id} className={styles.goalsItem}>
+                <div className={styles.goalDesc}>
+                  <span>{goal.id}</span>
+                  <h3>{goal.title}</h3>
+                  <p>{goal.text}</p>
+                </div>
+              </div>
+            ))}
+            {/* next three elements reversed */}
+            {ourVisionGoalsData
+              .slice(3, 6)
+              .reverse()
+              .map((goal) => (
+                <div key={goal.id} className={styles.goalsItem}>
+                  <div className={styles.goalDesc}>
+                    <span>{goal.id}</span>
+                    <h3>{goal.title}</h3>
+                    <p>{goal.text}</p>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -142,6 +142,10 @@
 
 @media only screen and (max-width: 1440px) {
 
+  .contentTop {
+    margin-bottom: 80px;
+  }
+
   .contentTop, .contentBottom {
     align-items: center;
   }
@@ -218,6 +222,10 @@
 }
 
 @media only screen and (max-width: 992px) {
+  .contentTop {
+    margin-bottom: 100px;
+  }
+
   .imgAbsolute1, .imgAbsolute2 {
     display: none;
   }
