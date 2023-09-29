@@ -1,0 +1,10 @@
+.ourVision {
+  background-color: var(--bg-color-dark2);
+}
+
+.header {
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+}
+

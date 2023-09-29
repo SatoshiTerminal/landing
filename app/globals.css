@@ -146,6 +146,7 @@ button {
   overflow: hidden;
   z-index: 10;
   text-transform: uppercase;
+  text-align: center;
   
 }
 .primary-btn:hover {
@@ -194,4 +195,18 @@ button {
 
 .invisible {
   visibility: hidden !important;
+}
+
+/* Animation Class */
+.rotateUp {
+  animation: rotateUp 1s ease-in-out;
+}
+
+@keyframes rotateUp {
+  0% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }

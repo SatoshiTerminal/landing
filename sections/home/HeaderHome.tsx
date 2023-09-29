@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './HeaderHome.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HeaderHome() {
   return (
@@ -10,7 +11,7 @@ export default function HeaderHome() {
         src="/images/home/header/header__img-bg.jpg"
         alt="background"
         fill={true}
-      />      
+      />
       <div className={styles.content}>
         <Image
           src="/images/home/header/logo.png"
@@ -45,7 +46,14 @@ export default function HeaderHome() {
         {/* Buttons */}
         <div className={styles.buttonsGroup}>
           <button className="primary-btn">Join wating list</button>
-          <button className="primary-btn">Learn more</button>
+          <a
+            className="primary-btn"
+            target="_blank"
+            href="/images/home/header/Satoshi-Terminal-Pitchdeck.pdf"
+            rel="noopener noreferrer"
+          >
+            Learn more
+          </a>
         </div>
       </div>
     </header>
