@@ -14,7 +14,7 @@ export default function HeaderHome() {
       />
       <div className={styles.content}>
         <Image
-          src="/images/home/header/logo.png"
+          src="/images/home/header/logo-main.svg"
           className={styles.logo}
           alt="logo"
           width={250}
