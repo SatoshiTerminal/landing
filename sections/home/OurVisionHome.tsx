@@ -54,15 +54,14 @@ export default function OurVision() {
 
         {/* Goals start */}
         <div className={styles.ourGoals}>
-          {/* Line top start */}
           {/* Mobile title start */}
           <div className={`${styles.titleGoalsBox} ${styles.mobileTitle}`}>
             <div className={styles.mainSubtitleGoals}>Join us</div>
             <h3 className={styles.mainTitleGoals}>Our goals</h3>
           </div>
           {/* Mobile title end*/}
-
-          <div className={styles.contentGoals}>
+          {/* Line top start   */}
+          <div className={`${styles.contentGoals} ${styles.lineTop}`}>
             {/*  first three elements from this array */}
             {ourVisionGoalsData.slice(0, 3).map((goal) => (
               <div key={goal.id} className={styles.goalsItem}>
@@ -86,7 +85,7 @@ export default function OurVision() {
                 </div>
 
                 <div className={styles.goalDesc}>
-                  <h3>{goal.title}</h3>
+                  <h3 className={styles.goalDescTitle}>{goal.title}</h3>
                   <p>{goal.text}</p>
                 </div>
               </div>
@@ -101,7 +100,7 @@ export default function OurVision() {
           {/* Center end */}
 
           {/* Line bottom start*/}
-          <div className={styles.contentGoals}>
+          <div className={`${styles.contentGoals} ${styles.lineBottom}`}>
             {/* next three elements reversed */}
             {ourVisionGoalsData
               .slice(3, 6)
