@@ -55,6 +55,13 @@ export default function OurVision() {
         {/* Goals start */}
         <div className={styles.ourGoals}>
           {/* Line top start */}
+          {/* Mobile title start */}
+          <div className={`${styles.titleGoalsBox} ${styles.mobileTitle}`}>
+            <div className={styles.mainSubtitleGoals}>Join us</div>
+            <h3 className={styles.mainTitleGoals}>Our goals</h3>
+          </div>
+          {/* Mobile title end*/}
+
           <div className={styles.contentGoals}>
             {/*  first three elements from this array */}
             {ourVisionGoalsData.slice(0, 3).map((goal) => (
@@ -64,8 +71,8 @@ export default function OurVision() {
                   alt="icon"
                   quality={100}
                   width={70}
-                  height={2}
-                  className={styles.arrowIcon}
+                  height={12}
+                  className={styles.arrowIconRight}
                 />
                 <div className={styles.numberItem}>
                   <Image
@@ -87,9 +94,9 @@ export default function OurVision() {
           </div>
           {/* Line top end */}
           {/* Center start */}
-          <div className={styles.centerGoals}>
-            <div className={styles.centerSubtitle}>Join us</div>
-            <h3 className={styles.centerTitle}>Our goals</h3>
+          <div className={`${styles.titleGoalsBox} ${styles.desktopTitle}`}>
+            <div className={styles.mainSubtitleGoals}>Join us</div>
+            <h3 className={styles.mainTitleGoals}>Our goals</h3>
           </div>
           {/* Center end */}
 
@@ -101,6 +108,14 @@ export default function OurVision() {
               .reverse()
               .map((goal) => (
                 <div key={goal.id} className={styles.goalsItem}>
+                  <Image
+                    src="/images/home/our-vision/arrow.svg"
+                    alt="icon"
+                    quality={100}
+                    width={70}
+                    height={12}
+                    className={styles.arrowIconLeft}
+                  />
                   <div className={styles.numberItem}>
                     <Image
                       src="/images/home/our-vision/number-bg.svg"
