@@ -15,7 +15,7 @@ import SectionHeader from '@/components/SectionHeader';
 export default function OverviewHome() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    rootMargin: '-100px 0px',
+    rootMargin: '-200px 0px',
   });
   return (
     <section className={`${styles.overview} home-sect-p`}>
