@@ -59,13 +59,20 @@ export default function OurVision() {
             {/*  first three elements from this array */}
             {ourVisionGoalsData.slice(0, 3).map((goal) => (
               <div key={goal.id} className={styles.goalsItem}>
+                <Image
+                  src="/images/home/our-vision/arrow.svg"
+                  alt="icon"
+                  quality={100}
+                  width={70}
+                  height={2}
+                  className={styles.arrowIcon}
+                />
                 <div className={styles.numberItem}>
                   <Image
                     src="/images/home/our-vision/number-bg.svg"
                     alt="icon"
                     quality={100}
-                    width={92}
-                    height={100}
+                    fill={true}
                     className={styles.numberBg}
                   />
                   <span className={styles.number}>{goal.id}</span>
@@ -78,7 +85,7 @@ export default function OurVision() {
               </div>
             ))}
           </div>
-          {/* Line top end */}    
+          {/* Line top end */}
           {/* Center start */}
           <div className={styles.centerGoals}>
             <div className={styles.centerSubtitle}>Join us</div>
@@ -99,8 +106,7 @@ export default function OurVision() {
                       src="/images/home/our-vision/number-bg.svg"
                       alt="icon"
                       quality={100}
-                      width={92}
-                      height={100}
+                      fill={true}
                       className={styles.numberBg}
                     />
                     <span className={styles.number}>{goal.id}</span>
@@ -113,7 +119,7 @@ export default function OurVision() {
                 </div>
               ))}
           </div>
-           {/* Line bottom end*/}
+          {/* Line bottom end*/}
         </div>
         {/* Goals end */}
       </div>
