@@ -175,7 +175,10 @@
   }
 
   .content  {
-    padding: 30px 15px;
+    padding-top: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
   }
 
  .description {

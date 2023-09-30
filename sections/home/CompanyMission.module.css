@@ -12,11 +12,41 @@
   justify-content: space-between;
   align-items: center;
   gap: 80px;
+  margin-bottom: 100px;
+}
+
+.headerTitle {
+  margin-bottom: 0;
 }
 
 .headerImg {
   width: 324px;
   height: 329px;
+}
+
+.mission {
+  display: grid;
+  gap: 70px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.missionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.missionItemTitle {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 1200px) {
+  .mission {
+    gap: 30px;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -29,19 +59,50 @@
     height: 255px;
   }
 
+  .mission {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 50px;
+    column-gap: 150px;
+  }
+
 }
 
 @media only screen and (max-width: 768px) {
   .header {
     flex-direction: column-reverse;
     gap: 30px;
+    margin-bottom: 50px;
   }
 
   .headerImg {
     width: 374px;
     height: 380px;
   }
+
+  .mission {
+    column-gap: 100px;
+  }
 }
+
+@media only screen and (max-width: 630px) {
+  .mission {
+    column-gap: 60px;
+    row-gap: 60px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .mission {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+
+  .missionIcon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 
 @media only screen and (max-width: 450px) {
   .headerImg {
