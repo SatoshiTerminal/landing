@@ -14,7 +14,7 @@ export const companyMissionData: CompanyMissionType = [
   },
   {
     title: 'Converting reluctant investors into blockchain experts',
-    iconUrl: '/images/home/company-mission/icons/people.svg',
+    iconUrl: '/images/home/company-mission/icons/investorsvg.svg',
   },
   {
     title: 'Bringing the world`s first Bloomberg Terminal for crypto to the markets',

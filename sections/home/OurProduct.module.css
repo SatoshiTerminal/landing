@@ -13,12 +13,13 @@
 
 .contentProduct {
   position: relative;
-  padding: 80px 170px;
+  padding: 90px 170px;
   background: linear-gradient(180deg, #1b1b1b 0%, rgba(35, 28, 28, 0.14) 100%);
   overflow: hidden;
   display: flex;
-  gap: 50px;
+  gap: 150px;
   justify-content: space-between;
+  align-items: center;
 }
 
 .triangleTopLeft {
@@ -38,6 +39,7 @@
   background-color: #2C2C35;
   display: flex;
   flex-direction: column;
+  max-width: 576px;
   gap: 30px;
 }
 
@@ -55,8 +57,141 @@
   gap: 25px;
 }
 
-.productItem {
+.listItem {
   display: flex;
   gap: 10px;
   align-items: center;
+  
+}
+
+.listItemIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.productImagesGroup {
+  position: relative;
+
+}
+
+.productImage {
+  width: 638px;
+  height: 360px;
+}
+
+.productImageBg {
+  position: absolute;
+  right: -80px;
+  top: -100px;
+  width: 550px;
+  height: 550px;
+  z-index: -1;
+}
+
+@media only screen and (max-width: 1700px) {
+  .contentProduct {
+    padding: 90px 100px;
+    gap: 50px;
+  }
+  
+}
+
+@media only screen and (max-width: 1440px) {
+  .contentProduct {
+    padding: 90px 50px;
+    gap: 50px;
+  }
+
+  .productImage {
+    width: 500px;
+    height: 280px;
+  }
+
+  .productImageBg {
+    right: -30px;
+    top: -70px;
+    width: 450px;
+    height: 450px;
+  }
+
+  .listItemIcon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .contentProduct {
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .itemProduct {
+    max-width: 700px;
+  }
+
+  .productImage {
+    width: 600px;
+    height: 340px;
+  }
+
+  .productImageBg {
+    top: -50px;
+    right: -50px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .triangleTopLeft {
+    left: -200px;
+
+  }
+
+  .productImage {
+    width: 450px;
+    height: 275px;
+  }
+
+  .contentProduct {
+    padding: 50px 15px;
+  }
+
+  .itemProduct {
+    padding: 15px;
+  }
+
+  .productImageBg {
+    top: -50px;
+    right: 0;
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media only screen and (max-width: 578px) {
+  .itemTitle {
+    font-size: 22px;
+  }
+
+  .productImage  {
+    width: 400px;
+    height: 225px;
+  }
+
+
+  
+}
+
+@media only screen and (max-width: 450px) {
+  .productImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .productImageBg {
+    width: 300px;
+    height: 300px;
+  }
+
 }
