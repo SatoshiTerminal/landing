@@ -1,12 +1,16 @@
 .header {
   display: flex;
   gap: 80px;
+  margin-bottom: 60px;
 }
 
 .price {
-  flex-basis: 30%;
+  width: 30%;
   position: relative;
-  padding: 90px 55px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .imageBg {
@@ -40,10 +44,64 @@
 }
 
 .headerContent {
-  flex-basis: 70%;
+  width: 70%;
   padding: 50px;
   position: relative;
   display: flex;
+  gap: 30px;
+}
+
+.headerContentLeft {
+  display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.headerContentTitle {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.contentBottom {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.contentBottomLeft {
+  width: 55%;
+  display: flex;
+  padding-left: 50px;
+  padding-top: 35px;
+  flex-direction: column;
+  gap: 25px;
+  box-shadow: 20px 20px 12px -15px rgba(11, 51, 52, 0.5) inset;
+}
+
+.contentBottomTitle {
+  font-size: 25px;
+  font-weight: 600;
+  max-width: 442px;
+}
+
+.contentBottomTabs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20px;
+  column-gap: 25px;
+}
+
+.tabsItem {
+  border-radius: 20px;
+  background-color: #2c2c35;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+}
+
+.contentBottomRight {
+  padding-right: 35px;
+  padding-top: 50px;
+  width: 45%;
+  box-shadow: 20px 20px 12px -15px rgba(11, 51, 52, 0.5);
 }
