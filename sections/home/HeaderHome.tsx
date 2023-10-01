@@ -52,7 +52,7 @@ export default function HeaderHome() {
             href="/images/home/header/Satoshi-Terminal-Pitchdeck.pdf"
             rel="noopener noreferrer"
           >
-            Learn more
+            Our Overview
           </a>
         </div>
       </div>

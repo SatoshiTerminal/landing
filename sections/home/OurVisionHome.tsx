@@ -35,7 +35,7 @@ export default function OurVision() {
               href="/images/home/header/Satoshi-Terminal-Pitchdeck.pdf"
               rel="noopener noreferrer"
             >
-              Read more
+              Satoshi info
             </a>
           </div>
           <Image

@@ -1,6 +1,8 @@
+'use client'
 import React from 'react';
 import styles from './OurProduct.module.css';
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
 
 // Components
 import SectionHeader from '@/components/SectionHeader';
@@ -9,6 +11,10 @@ import SectionHeader from '@/components/SectionHeader';
 import { ourProductList } from '@/data/ourProductData';
 
 export default function OurProduct() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '-100px 0px',
+  });
   return (
     <section className={`${styles.ourProduct} home-sect-p`}>
       <div className="container-xl">
@@ -25,7 +31,7 @@ export default function OurProduct() {
         </div>
         {/* Header end */}
 
-        {/* Content start*/}
+        {/* Content Top start*/}
         <div className={styles.contentProduct}>
           <div className={styles.triangleTopLeft}></div>
           {/* Left */}
@@ -51,9 +57,11 @@ export default function OurProduct() {
             </ul>
           </div>
 
-          <div className={styles.productImagesGroup}>
+          <div ref={ref} className={styles.productImagesGroup}>
             <Image
-              className={styles.productImage}
+              className={`${styles.productImage} ${
+                inView ? `animate__animated animate__flash animate__slow` : 'invisible'
+              }`}
               src="/images/home/our-product/keyboard-satoshi-terminal.png"
               alt="Satoshi Terminal keyboard"
               width={638}
@@ -70,8 +78,11 @@ export default function OurProduct() {
             />
           </div>
         </div>
-        {/* Content end */}
+        {/* Content Top end */}
+
+        <div className={styles.imageCenter}></div>
       </div>
+      {/* end container-xl */}
     </section>
   );
 }
