@@ -84,7 +84,7 @@ export default function OverviewHome() {
               <Image
                 src="/images/home/overview/rectangle-cut-large.svg"
                 alt="overview"
-                fill={true}
+                fill
                 className={`${styles.imgReactangle2} ${
                   inView
                     ? `animate__animated animate__flash animate__slower`
@@ -122,7 +122,7 @@ export default function OverviewHome() {
               <Image
                 src="/images/home/overview/rectangle-cut-large.svg"
                 alt="overview"
-                fill={true}
+                fill
                 className={styles.imgReactangle2}
               />
               <Image

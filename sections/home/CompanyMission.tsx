@@ -15,7 +15,7 @@ export default function CompanyMission() {
         src="/images/home/company-mission/mission-bg.png"
         alt="mission-bg"
         className={styles.bgSectionImg}
-        fill={true}
+        fill
         quality={100}
       />
       <div className="container">

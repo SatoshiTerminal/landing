@@ -78,7 +78,7 @@ export default function OurVision() {
                     src="/images/home/our-vision/number-bg.svg"
                     alt="icon"
                     quality={100}
-                    fill={true}
+                    fill
                     className={styles.numberBg}
                   />
                   <span className={styles.number}>{goal.id}</span>
@@ -120,7 +120,7 @@ export default function OurVision() {
                       src="/images/home/our-vision/number-bg.svg"
                       alt="icon"
                       quality={100}
-                      fill={true}
+                      fill
                       className={styles.numberBg}
                     />
                     <span className={styles.number}>{goal.id}</span>

@@ -10,7 +10,7 @@ export default function HeaderHome() {
         className={styles.headerBg}
         src="/images/home/header/header__img-bg.jpg"
         alt="background"
-        fill={true}
+        fill
         priority={true}
       />
       <div className={styles.content}>
@@ -28,7 +28,7 @@ export default function HeaderHome() {
             className={styles.descriptionBg}
             src="/images/home/header/rectangle-cut.svg"
             alt="background"
-            fill={true}
+            fill
           />
           <div className={styles.titleMain}>
             <div className={styles.subtitle}>
