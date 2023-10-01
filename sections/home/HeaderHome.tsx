@@ -11,6 +11,7 @@ export default function HeaderHome() {
         src="/images/home/header/header__img-bg.jpg"
         alt="background"
         fill={true}
+        priority={true}
       />
       <div className={styles.content}>
         <Image

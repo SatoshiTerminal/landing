@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react';
 import styles from './OurProduct.module.css';
 import Image from 'next/image';
@@ -60,7 +60,9 @@ export default function OurProduct() {
           <div ref={ref} className={styles.productImagesGroup}>
             <Image
               className={`${styles.productImage} ${
-                inView ? `animate__animated animate__flash animate__slow` : 'invisible'
+                inView
+                  ? `animate__animated animate__flash animate__slow`
+                  : 'invisible'
               }`}
               src="/images/home/our-product/keyboard-satoshi-terminal.png"
               alt="Satoshi Terminal keyboard"
@@ -79,8 +81,62 @@ export default function OurProduct() {
           </div>
         </div>
         {/* Content Top end */}
-
-        <div className={styles.imageCenter}></div>
+        {/* Image center start       */}
+        <div className={styles.imageCenterBox}>
+          <Image
+            className={styles.imgCenter}
+            src="/images/home/our-product/microprocessor.png"
+            alt="Satoshi Terminal keyboard"
+            width={452}
+            height={452}
+            quality={90}
+          />
+        </div>
+        {/* Image center end */}
+        {/* Comparison bottom start */}
+        <div className={styles.comparisonBottom}>
+          <div className={styles.triangleBottomRight}></div>
+          <h5 className={styles.comparisionTitle}>
+            Bloomberg Terminal Keyboard for comparison
+          </h5>
+          <div className={styles.imagesBottomBox}>
+            {/* Image 1 start */}
+            <div className={styles.imagesBottomItem}>
+              <Image
+                className={styles.imgProductBottom}
+                src="/images/home/our-product/blomberg-keyboard.png"
+                alt="Bloomberg keyboard"
+                width={500}
+                height={177}
+                quality={90}
+              />
+              <p className={styles.descImagesBottom}>
+                Tailored for quick access to Stocks, Bonds, and Derivatives  
+              </p>
+            </div>
+            {/* Image 1 end */}
+            <div className={styles.dividingLine}>
+              <span>l</span>
+            </div>
+            {/* Image 2 start */}
+            <div className={styles.imagesBottomItem}>
+              <Image
+                className={styles.imgProductBottom2} 
+                src="/images/home/our-product/keyboard-satoshi-bottom.png"
+                alt="Bloomberg keyboard"
+                width={500}
+                height={245}
+                quality={90}
+              />
+              <p className={styles.descImagesBottom}>
+                Tailored for quick access to Stocks, Bonds, Derivatives,{' '}
+                <span>Crypto Assets, Blockchain Projects,</span> and more   
+              </p>
+            </div>
+            {/* Image 2 end */}
+          </div>
+        </div>
+        {/* Comparison bottom end */}
       </div>
       {/* end container-xl */}
     </section>
