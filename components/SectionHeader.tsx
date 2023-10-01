@@ -9,7 +9,7 @@ import { IoTriangleSharp } from 'react-icons/io5';
 type SectionHeaderProps = {
   cssClassName?: string;
   subtitle: string;
-  titleBeforeAccent: string;
+  titleBeforeAccent?: string;
   titleAccent: string;
   titleAfterAccent?: string;
   description: string;
