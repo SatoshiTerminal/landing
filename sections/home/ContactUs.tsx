@@ -6,12 +6,14 @@ import Image from 'next/image';
 import SectionHeader from '@/components/SectionHeader';
 import ContactForm from '@/components/ContactForm';
 
+// Data
+import { docsData } from '@/data/contactUsData';
+
 export default function ContactUs() {
   return (
     <section className={`${styles.contactUs} home-sect-p`}>
       <div className="container">
         <SectionHeader
-          cssClassName={styles.ourRoadmapHeader}
           subtitle="Contact us"
           titleBeforeAccent="Have any"
           titleAccent="questions"
@@ -26,8 +28,48 @@ export default function ContactUs() {
           quality={100}
         />
         <div className={styles.content}>
-          <ContactForm />
-          
+          {/* Form width 60% all styles - /components/contactForm.css */}
+          <ContactForm cssClass={styles.form} />
+          {/* Documents */}
+          <div className={styles.docsContent}>
+            <h5 className={styles.docsTitle}>Read documents</h5>
+            <div className={styles.docsContainer}>
+              {docsData.map((item, index) => (
+                <div key={index} className={styles.docsItem}>
+                  <div className={styles.docsIconDecor}>
+                    <a
+                      className={styles.docsLink}
+                      target="_blank"
+                      href={item.linkUrl}
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src={item.iconUrl}
+                        alt="document icon"
+                        width={32}
+                        height={40}
+                        quality={100}
+                        className={styles.docsIconMain}
+                      />
+                    </a>
+                  </div>
+
+                  <div className={styles.docsItemTitle}>{item.title}</div>
+                </div>
+              ))}
+            </div>
+            <div className={styles.btnDownload}>
+              {' '}
+              <a
+                className="primary-btn text-center"
+                href="/images/home/header/Satoshi-Terminal-Pitchdeck.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download all
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

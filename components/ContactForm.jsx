@@ -9,7 +9,7 @@ import './contactForm.css';
 import { FaPhoneVolume } from 'react-icons/fa';
 import { ImLocation2 } from 'react-icons/im';
 
-export default function ContactForm() {
+export default function ContactForm( { cssClass } ) {
   // ============= Original code start =============
   const {
     register,
@@ -49,7 +49,7 @@ export default function ContactForm() {
 
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="form">
+    <form onSubmit={handleSubmit(onSubmit)} className={`form ${cssClass}`}>
       <h3 className="form-title">Get in touch now</h3>
       <input
         type="checkbox"

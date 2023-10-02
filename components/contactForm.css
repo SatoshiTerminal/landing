@@ -169,6 +169,10 @@
     width: 100%;
   }
 
+  .form-title {
+    grid-column: auto;
+  }
+
   .form-icon-top {
     font-size: 40px;
   }
