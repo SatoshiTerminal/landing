@@ -102,9 +102,7 @@
   border-left: 1px solid #00e4ff;
   left: -14px;
   opacity: 0.2;
-  width: 45%;
-  height: -webkit-calc(100% + 37px);
-  height: -moz-calc(100% + 37px);
+  width: 45%;  
   height: calc(100% + 37px);
   bottom: -20px;
   border-bottom: 1px solid var(--secondary-color);

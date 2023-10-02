@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './OurRoadmap.module.css';
-import Image from 'next/image';
 
 // Components
 import SectionHeader from '@/components/SectionHeader';

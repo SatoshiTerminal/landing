@@ -10,6 +10,7 @@ import CompanyMission from '@/sections/home/CompanyMission';
 import OurProduct from '@/sections/home/OurProduct';
 import OurPrice from '@/sections/home/OurPrice';
 import OurRoadmap from '@/sections/home/OurRoadmap';
+import ContactUs from '@/sections/home/ContactUs';
 export default function Home() {
   return (
     <React.Fragment>
@@ -28,6 +29,8 @@ export default function Home() {
         <OurPrice />
         {/* Section 6 Our Roadmap */}
         <OurRoadmap />
+        {/* Section 7 Contact Us */}
+        <ContactUs />
       </main>
     </React.Fragment>
   );
