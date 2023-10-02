@@ -33,3 +33,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.not-deploy/style.css
+.not-deploy/index-demo-2.html

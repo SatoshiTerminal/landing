@@ -1,0 +1,123 @@
+.ourRoadmap {
+  background-color: var(--bg-color-dark2);
+}
+
+.roadmap {
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  display: inline-block;
+  width: 100%;
+}
+
+.roadmapLine {
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary-color);
+  position: relative;
+  box-shadow: 0 0 6px 1px var(--primary-color);
+  border-radius: 3px;
+}
+
+.roadmapContent {
+  position: relative;
+}
+
+.roadmapItem {
+  top: 5px;
+  position: absolute;
+  margin-left: -8px;
+  margin-top: -16px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #00e4ff;
+  border: 4px solid #000;
+  box-shadow: 0 0 6px 2px #00e4ff;
+}
+
+.roadmapItem::before {
+  content: '';
+  opacity: 0.6;
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 40px;
+  background-color: #00e4ff;
+  left: calc(50% - 1px);
+}
+
+.roadmapItem:nth-child(2n + 1)::before {
+  top: -44px;
+}
+
+.roadmapItem:nth-child(2n) .itemContent {
+  top: 44px;
+}
+
+.roadmapItem:nth-child(2n + 1) .itemContent {
+  bottom: 44px;
+  transform: translateY(-100%) translateX(-18%);
+}
+
+.roadmapItem:nth-child(2n) .itemContent {
+  top: 55px; 
+  transform: translateX(-18%);
+}
+
+.itemContent {
+  position: relative;
+  width: 250px;
+  height: auto;
+  margin-left: -60px;
+  text-align: center;
+}
+
+.itemList {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.roadmapItem:nth-child(2n + 1)  .itemList::before {
+  border-bottom: 1px solid #00e4ff;
+  margin-top: 10px;
+}
+
+.itemList::before {
+  content: '';
+  position: absolute;
+  border-left: 1px solid #00e4ff;
+  left: -14px;
+  opacity: .2;
+  width: 45%;
+  height: -webkit-calc(100% + 37px);
+  height: -moz-calc(100% + 37px);
+  height: calc(100% + 37px);
+  border-bottom: 1px solid #00e4ff;
+}
+
+
+.left10 {
+  left: 10%;
+}
+.left20 {
+  left: 20%;
+}
+.left30 {
+  left: 30%;
+}
+.left40 {
+  left: 40%;
+}
+.left50 {
+  left: 50%;
+}
+.left60 {
+  left: 60%;
+}
+.left70 {
+  left: 70%;
+}
