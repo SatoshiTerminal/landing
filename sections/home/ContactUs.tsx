@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 // Components
 import SectionHeader from '@/components/SectionHeader';
+import ContactForm from '@/components/ContactForm';
 
 export default function ContactUs() {
   return (
@@ -24,6 +25,10 @@ export default function ContactUs() {
           fill
           quality={100}
         />
+        <div className={styles.content}>
+          <ContactForm />
+          
+        </div>
       </div>
     </section>
   );

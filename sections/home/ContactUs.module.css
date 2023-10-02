@@ -6,3 +6,9 @@
   object-fit: cover;
   z-index: -1;
 }
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}

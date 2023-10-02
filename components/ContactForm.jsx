@@ -1,11 +1,10 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 import { useState } from 'react';
-import { useForm, useWatch  } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import useWeb3Forms from '@web3forms/react';
-// Css
-import styles from './contactForm.module.css';
+// Css Only no Css module!
+import './contactForm.css';
 // Icons
 import { FaPhoneVolume } from 'react-icons/fa';
 import { ImLocation2 } from 'react-icons/im';
@@ -24,14 +23,17 @@ export default function ContactForm() {
   const [message, setMessage] = useState('');
 
   // Please update the Access Key in the .env
+
+  // Just for testing purpose, you can use the following Access Key
+  // It send to my email 0vqe5z6q@duck.com , but not to the client email
   const apiKey =
-    process.env.WEB3FORMS_ACCESS_KEY || 'f9ccf471-689c-4d75-a9f7-73c4ca9e098a';
+    process.env.WEB3FORMS_ACCESS_KEY || 'd99962bf-a294-4104-8ec5-d1109b340b23';
 
   const { submit: onSubmit } = useWeb3Forms({
     access_key: apiKey,
     settings: {
-      from_name: 'Client from My Website',
-      subject: 'New Contact Message from My Website',
+      from_name: 'Client from satoshiterminal.io',
+      subject: 'New Contact Message from Satoshi Terminal',
     },
     onSuccess: (msg) => {
       setIsSuccess(true);
@@ -48,35 +50,14 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">
+      <h3 className="form-title">Get in touch now</h3>
       <input
         type="checkbox"
         id=""
         className="hidden"
         style={{ display: 'none' }}
         {...register('botcheck')}
-      ></input>
-      {/* Form top start */}
-
-      <div className="form-top-item">
-        <div className='form-icon-top'>
-          <FaPhoneVolume />
-        </div>
-        <div className="form-top-text">
-          <h5 className="form-top-title">Phone Number</h5>
-          <a className="form-top-content" href="tel:+33766453319">+33-766-45-33-19</a>
-        </div>
-      </div>
-      <div className="form-top-item">
-        <div className='form-icon-top'>
-          <ImLocation2 />
-        </div>
-        <div className="form-top-text">
-          <h5 className="form-top-title">Address:</h5>
-          <p className="form-top-content">France, Alpes Maritimes, <br /> Nice, 06000</p>
-        </div>
-      </div>
-
-      {/* Form top end */}
+      ></input>     
 
       {/* Form Action start */}
       <div className="form-item">
@@ -110,7 +91,7 @@ export default function ContactForm() {
           placeholder="Your email*"
           name="email"
           {...register('email', {
-            required: 'Enter your email',
+            required: 'Please enter your email',
             pattern: {
               value: /^\S+@\S+$/i,
               message: 'Please enter a valid email',
@@ -132,7 +113,7 @@ export default function ContactForm() {
           placeholder="Your Message*"
           name="message"
           {...register('message', {
-            required: 'Enter your Message',
+            required: 'Please enter your message',
           })}
         />
         {errors.message && (
