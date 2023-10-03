@@ -3,6 +3,9 @@ import styles from './HeaderHome.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// Components
+import WatingListForm from '@/components/WatingListForm';
+
 export default function HeaderHome() {
   return (
     <header className={styles.headerHome}>

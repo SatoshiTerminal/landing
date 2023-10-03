@@ -3,12 +3,10 @@ import React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useWeb3Forms from '@web3forms/react';
-// Css import normal
-import './contactForm.css';
+import styles from './WatingListForm.module.css';
 
-
-export default function ContactForm( { cssClass } ) {
-  // ============= Original code start =============
+export default function WatingListForm() {
+  // Waiting list form
   const {
     register,
     handleSubmit,
@@ -30,8 +28,8 @@ export default function ContactForm( { cssClass } ) {
   const { submit: onSubmit } = useWeb3Forms({
     access_key: apiKey,
     settings: {
-      from_name: 'Client from satoshiterminal.io',
-      subject: 'New Contact Message from Satoshi Terminal',
+      from_name: 'Satoshiterminal.io - Waiting list',
+      subject: ' Message from Satoshi Terminal - Waiting list',
     },
     onSuccess: (msg) => {
       setIsSuccess(true);
@@ -43,19 +41,18 @@ export default function ContactForm( { cssClass } ) {
       setMessage(msg);
     },
   });
-   // ============= Original code end =============
-
+  // ============= Original code end =============
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={`form ${cssClass}`}>
-      <h3 className="form-title">Get in touch now</h3>
+    <form onSubmit={handleSubmit(onSubmit)} className={`${styles.form} ${cssClass}`}>
+      <h3 className={styles.formTitle}>Get in touch now</h3>
       <input
         type="checkbox"
         id=""
         className="hidden"
         style={{ display: 'none' }}
         {...register('botcheck')}
-      ></input>     
+      ></input>
 
       {/* Form Action start */}
       <div className="form-item">

@@ -1,0 +1,200 @@
+/* Wating list form styles */
+.form {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 30px;
+  row-gap: 15px;
+  padding: 30px 25px;
+  background-color: #2C2C35;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.form-title {
+  grid-column: 1 / 3;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.form-top-item {
+  background-color: #21212A;
+}
+
+.form-input {
+  background-color: #21212A;
+  min-height: 60px;
+  width: 100%;
+}
+
+.form-error {
+  color: red;
+}
+
+.form-success {
+  color: #0fc20f;
+}
+
+.form-input.form-success {
+  border: 2px solid green;
+}
+
+.form-input.form-error {
+  border: 2px solid red;
+}
+
+.form-input[type='text'],
+.form-input[type='email'] {
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+  color: var(--white);
+}
+
+.form-input:focus {
+  border: 2px solid var(--primary-color);
+  background-color: #1b2048;
+}
+
+.form-input::placeholder {
+  color: #c1bcbc;
+  font-size: 16px;
+}
+
+.form-top-item {
+  display: flex;
+  gap: 25px;
+  padding: 30px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-icon-top {
+  font-size: 50px;
+  line-height: 0;
+  color: var(--secondary-color);
+}
+
+.form-top-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.form-top-content {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.form-item {
+  width: 100%;
+}
+
+.form-item input {
+  border-radius: 15px;
+}
+
+.form-textarea {
+  height: 200px;
+  width: 100%;
+  grid-column: 1 / 3;
+  
+}
+.form-textarea-iput {
+  padding: 20px;
+  background-color: #21212A;
+  outline: none;
+  resize: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+.form-textarea-iput::placeholder {
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+/* here styles for button */
+.form-btn {
+  grid-column: 1 / 3;
+  margin: 0 auto;  
+}
+
+.form-msg-sent {
+  line-height: 1;
+  /* color: var(--white); */
+  font-weight: bold;
+  grid-column: 1 / 3;
+  text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+  .content {
+    gap: 20px;
+  }
+
+  .form-icon-top {
+    font-size: 30px;
+  }
+
+  .form-top-title {
+    font-size: 20px;
+  }
+
+  .form-top-content {
+    font-size: 15px;
+  }
+
+  .form-top-item {
+    padding: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .content-left {
+    display: none;
+  }
+
+  .content {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .form-title {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .form-title {
+    grid-column: auto;
+  }
+
+  .form-icon-top {
+    font-size: 40px;
+  }
+
+  .form-top-item {
+    margin-bottom: 0;
+    justify-content: center;
+  }
+
+  .form-textarea {
+    grid-column: auto;
+  }
+
+  .form-msg-sent {
+    grid-column: auto;
+  }
+
+  .form-btn {
+    grid-column: auto;
+  }
+}
