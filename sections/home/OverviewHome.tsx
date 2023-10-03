@@ -18,7 +18,7 @@ export default function OverviewHome() {
     rootMargin: '-200px 0px',
   });
   return (
-    <section className={`${styles.overview} home-sect-p`}>
+    <section id='section-1' className={`${styles.overview} home-sect-p`}>
       <Image
         src="/images/home/overview/bitcoin-left.png"
         alt="bitcoin"

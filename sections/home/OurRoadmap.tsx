@@ -6,7 +6,7 @@ import SectionHeader from '@/components/SectionHeader';
 
 export default function OurRoadmap() {
   return (
-    <section className={`${styles.ourRoadmap} home-sect-p`}>
+    <section id="section-6" className={`${styles.ourRoadmap} home-sect-p`}>
       <div className="container">
         <SectionHeader
           cssClassName={styles.ourRoadmapHeader}

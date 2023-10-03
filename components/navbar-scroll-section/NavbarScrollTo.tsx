@@ -11,7 +11,6 @@ import NavbarMobile from './NavbarMobileScrollTo';
 import { navbarScrollTo } from '@/data/navbarScrollTo';
 
 const Navbar = () => {
-
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const [goingDown, setGoingDown] = useState(false);
@@ -22,10 +21,10 @@ const Navbar = () => {
       const currentScrollY = window.scrollY;
       setScrollPosition(currentScrollY);
 
-      if (scrollPosition < 50 && goingDown) {
+      if (scrollPosition < 800 && goingDown) {
         setGoingDown(false);
       }
-      if (scrollPosition > 50 && !goingDown) {
+      if (scrollPosition > 800 && !goingDown) {
         setGoingDown(true);
       }
     };
@@ -39,11 +38,11 @@ const Navbar = () => {
     e.preventDefault();
     // get the href and remove everything before the hash (#)
     const href = e.currentTarget.href;
-    const targetId = href.replace(/.*\#/, "");
+    const targetId = href.replace(/.*\#/, '');
     // get the element by id and use scrollIntoView
     const elem = document.getElementById(targetId);
     elem?.scrollIntoView({
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
@@ -58,14 +57,12 @@ const Navbar = () => {
         const sectionHeight = section.clientHeight;
         if (scrollPosition >= sectionTop - sectionHeight / 3) {
           const sectionId = section.getAttribute('id');
-          document
-            .querySelectorAll(`.${styles.menu} a`)
-            .forEach((link) => {
-              link.classList.remove(`${styles.active}`);
-              if (link.getAttribute('href') === `#${sectionId}`) {
-                link.classList.add(`${styles.active}`);
-              }
-            });
+          document.querySelectorAll(`.${styles.menu} a`).forEach((link) => {
+            link.classList.remove(`${styles.active}`);
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add(`${styles.active}`);
+            }
+          });
         }
       });
     };
@@ -78,45 +75,47 @@ const Navbar = () => {
       className={`${styles.navbar} ${goingDown ? `${styles.scrolled}` : ''}`}
     >
       <div className="container">
-        <div className={styles.content}>
-          <div className={styles.logo}>
-            <Link className={styles.logoLink} href="/">
-              <Image
-                className={styles.logoImg}
-                src="/images/logo.svg"
-                width={53}
-                height={57}
-                alt="logo"
-              />
-            </Link>
-            <div className={styles.logoTitle}>
-              <span className={styles.firstWord}>Starter</span>
-              <span className={styles.secondWord}>Next.js 13</span>
+        <div className={styles.showHideOnScroll}>
+          <div className={styles.content}>
+            <div className={styles.logo}>
+              <Link className={styles.logoLink} href="/">
+                <Image
+                  className={styles.logoImg}
+                  src="/images/logo.svg"
+                  width={53}
+                  height={57}
+                  alt="logo"
+                />
+              </Link>
+              <div className={styles.logoTitle}>
+                <span className={styles.firstWord}>Satoshi</span>
+                <span className={styles.secondWord}>Terminal</span>
+              </div>
             </div>
-          </div>
 
-          <ul className={styles.menu}>
-            {/* Menu links start */}
-            {navbarScrollTo.map((link) => {
-              return (
-                <li key={link.id}>
-                  <Link
-                    className={styles.link}
-                    href={link.scrollTo}
-                    onClick={handleScroll}
-                  >
-                    {link.title}
-                  </Link>
-                </li>
-              );
-            })}
-            {/* Menu links end */}
-          </ul>
-          <Link className={`primary-btn ${styles.btnNavbar}`} href="/contact">
-            Get A Quote
-          </Link>
-          {/* Navbar mobile */}
-          <NavbarMobile />
+            <ul className={styles.menu}>
+              {/* Menu links start */}
+              {navbarScrollTo.map((link) => {
+                return (
+                  <li key={link.id}>
+                    <Link
+                      className={styles.link}
+                      href={link.scrollTo}
+                      onClick={handleScroll}
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                );
+              })}
+              {/* Menu links end */}
+            </ul>
+            <Link className={`primary-btn ${styles.btnNavbar}`} href="/contact">
+              Get A Quote
+            </Link>
+            {/* Navbar mobile */}
+            <NavbarMobile />
+          </div>
         </div>
       </div>
     </nav>

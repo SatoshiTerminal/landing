@@ -10,7 +10,7 @@ import { companyMissionData } from '@/data/companyMissionData';
 
 export default function CompanyMission() {
   return (
-    <section className={`${styles.companyMission} home-sect-p`}>
+    <section id="section-3" className={`${styles.companyMission} home-sect-p`}>
       <Image
         src="/images/home/company-mission/mission-bg.png"
         alt="mission-bg"

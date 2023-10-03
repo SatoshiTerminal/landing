@@ -11,7 +11,7 @@ import { docsData } from '@/data/contactUsData';
 
 export default function ContactUs() {
   return (
-    <section className={`${styles.contactUs} home-sect-p`}>
+    <section id="section-7" className={`${styles.contactUs} home-sect-p`}>
       <div className="container">
         <SectionHeader
           subtitle="Contact us"
@@ -27,6 +27,7 @@ export default function ContactUs() {
           fill
           quality={100}
         />
+        <div className={styles.bgSectionColor}></div>
         <div className={styles.content}>
           {/* Form width 60% all styles - /components/contactForm.css */}
           <ContactForm cssClass={styles.form} />

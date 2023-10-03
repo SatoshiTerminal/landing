@@ -16,7 +16,7 @@ export default function OurProduct() {
     rootMargin: '-100px 0px',
   });
   return (
-    <section className={`${styles.ourProduct} home-sect-p`}>
+    <section id="section-4" className={`${styles.ourProduct} home-sect-p`}>
       <div className="container-xl">
         {/* Header start */}
         <div className={styles.header}>

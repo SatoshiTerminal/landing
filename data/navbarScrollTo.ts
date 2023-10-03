@@ -9,32 +9,37 @@ type NavbarScrollTo = {
 export const navbarScrollTo: NavbarScrollTo[] = [
   {
     id: 1,
-    title: 'Home',
-    scrollTo: '#',
+    title: 'Overview',
+    scrollTo: '#section-1',
   },
   {
     id: 2,
-    title: 'About',
-    scrollTo: '#about',
+    title: 'Our Vision',
+    scrollTo: '#section-2',
   },
   {
     id: 3,
-    title: 'Services',
-    scrollTo: '#services',
+    title: 'Mission',
+    scrollTo: '#section-3',
   },
   {
     id: 4,
-    title: 'Portfolio',
-    scrollTo: '#portfolio',
+    title: 'Product',
+    scrollTo: '#section-4',
   },
   {
     id: 5,
     title: 'Pricing',
-    scrollTo: '#pricing',
+    scrollTo: '#section-5',
   },
   {
     id: 6,
+    title: 'Roadmap',
+    scrollTo: '#section-6',
+  },
+  {
+    id: 7,
     title: 'Contact',
-    scrollTo: '#contact',
+    scrollTo: '#section-7',
   },
 ];

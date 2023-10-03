@@ -17,7 +17,7 @@ export default function OurVision() {
   });
 
   return (
-    <section className={`${styles.ourVision} home-sect-p`}>
+    <section id="section-2" className={`${styles.ourVision} home-sect-p`}>
       <div className="container">
         {/* Header start */}
         <div className={styles.header}>

@@ -21,6 +21,7 @@
 }
 
 body {
+  position: relative;
   color: var(--text-color);
   font-size: 18px;
   font-family: var(--font-outfit);

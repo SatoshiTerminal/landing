@@ -10,7 +10,7 @@ import { ourPriceData } from '@/data/ourPriceData';
 
 export default function OurPrice() {
   return (
-    <section className={`${styles.ourPrice} home-sect-p`}>
+    <section id="section-5" className={`${styles.ourPrice} home-sect-p`}>
       <div className="container">
         <SectionHeader
           subtitle="Our pricing"

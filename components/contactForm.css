@@ -160,6 +160,10 @@
     flex-direction: column-reverse;
     gap: 40px;
   }
+
+  .form-title {
+    font-size: 30px;
+  }
 }
 
 @media only screen and (max-width: 576px) {
