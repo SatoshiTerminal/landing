@@ -20,7 +20,7 @@ export default function NotFound() {
         a trusty compass in this digital expanse, always ready to guide you back
         to familiar territory.
       </p>
-      <Link className={`primary-btn ${styles.link}`} href="/">
+      <Link className={`primary-btn ${styles.btn404}`} href="/">
         {' '}
         <span className={styles.icon}>
           <FaHome />
