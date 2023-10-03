@@ -5,6 +5,9 @@ import { useForm } from 'react-hook-form';
 import useWeb3Forms from '@web3forms/react';
 import styles from './WatingListForm.module.css';
 
+// Icons
+import { AiOutlineClose } from 'react-icons/ai';
+
 export default function WatingListForm() {
   // Waiting list form
   const {
@@ -43,95 +46,120 @@ export default function WatingListForm() {
   });
   // ============= Original code end =============
 
-  return (
-    <div styleName={styles.overlay}>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-        <h3 className={styles.formTitle}>Get in touch now</h3>
-        <input
-          type="checkbox"
-          style={{ display: 'none' }}
-          {...register('botcheck')}
-        ></input>
+  // Wating list show hide
+  const [show, setShow] = useState(false);
 
-        {/* Form Action start */}
-        <div className={styles.formItem}>
-          <input
-            autoComplete="false"
-            className={`${styles.formInput} ${
-              errors.name ? `${styles.formError}` : `${styles.formSuccess}`
-            }`}
-            type="text"
-            placeholder="Your name*"
-            name="name"
-            {...register('name', {
-              required: 'Full name is required',
-              maxLength: 80,
-            })}
-          />
-          {errors.name && (
-            <div className={styles.formError}>
-              <small>{errors.name.message}</small>
-            </div>
-          )}
-        </div>
-        <div className={styles.formItem}>
-          <input
-            id="email_address"
-            autoComplete="false"
-            className={`${styles.formInput} ${
-              errors.name ? `${styles.formError}` : `${styles.formSuccess}`
-            }`}
-            type="email"
-            placeholder="Your email*"
-            name="email"
-            {...register('email', {
-              required: 'Please enter your email',
-              pattern: {
-                value: /^\S+@\S+$/i,
-                message: 'Please enter a valid email',
-              },
-            })}
-          />
-          {errors.email && (
-            <div className={styles.formError}>
-              <small>{errors.email.message}</small>
-            </div>
-          )}
-        </div>
-        <div className={styles.formTextarea}>
-          <textarea
-            className={`${styles.formInput} ${styles.formTextareaIput} ${
-              errors.name ? 'form-error' : 'form-success'
-            }`}
-            type="email"
-            placeholder="Your Message*"
-            name="message"
-            {...register('message', {
-              required: 'Please enter your message',
-            })}
-          />
-          {errors.message && (
-            <div className={styles.formError}>
-              {' '}
-              <small>{errors.message.message}</small>
-            </div>
-          )}
-        </div>
-        {isSubmitSuccessful && isSuccess && (
-          <div className={`${styles.formMsgSent} ${styles.formSuccess}`}>
-            {message || 'Success. Message sent successfully'} 🚀
+  const handleShow = () => {
+    setShow(true);
+  };
+
+  const handleClose = () => {
+    setShow(false);
+  };
+
+  return (
+    // Button show hide
+    <React.Fragment>
+      <button onClick={handleShow} className="primary-btn">
+        Join wating list
+      </button>
+
+      <div
+        className={`${styles.watingList} ${
+          show ? `${styles.show}` : `${styles.hide}`
+        }`}
+      >
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <div onClick={handleClose} aria-label="close form wating list">
+            <AiOutlineClose className={styles.closeIcon} />
           </div>
-        )}
-        {isSubmitSuccessful && !isSuccess && (
-          <div className={`${styles.formMsgSent} ${styles.formError}`}>
-            {message || 'Something went wrong. Please try later.'} 😞
+          <h3 className={styles.formTitle}>Join the waiting list</h3>
+          <input
+            type="checkbox"
+            style={{ display: 'none' }}
+            {...register('botcheck')}
+          ></input>
+
+          {/* Form Action start */}
+          <div className={styles.formItem}>
+            <input
+              autoComplete="false"
+              className={`${styles.formInput} ${
+                errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+              }`}
+              type="text"
+              placeholder="Your name*"
+              name="name"
+              {...register('name', {
+                required: 'Full name is required',
+                maxLength: 80,
+              })}
+            />
+            {errors.name && (
+              <div className={styles.formError}>
+                <small>{errors.name.message}</small>
+              </div>
+            )}
           </div>
-        )}
-        <button className={`primary-btn ${styles.formBtn}`}>
-          Send Message
-        </button>
-        {/* Form Action end */}
-      </form>
-    </div>
+          <div className={styles.formItem}>
+            <input
+              id="email_address"
+              autoComplete="false"
+              className={`${styles.formInput} ${
+                errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+              }`}
+              type="email"
+              placeholder="Your email*"
+              name="email"
+              {...register('email', {
+                required: 'Please enter your email',
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: 'Please enter a valid email',
+                },
+              })}
+            />
+            {errors.email && (
+              <div className={styles.formError}>
+                <small>{errors.email.message}</small>
+              </div>
+            )}
+          </div>
+          <div className={styles.formTextarea}>
+            <textarea
+              className={`${styles.formInput} ${styles.formTextareaIput} ${
+                errors.name ? 'form-error' : 'form-success'
+              }`}
+              type="email"
+              placeholder="Your Message*"
+              name="message"
+              {...register('message', {
+                required: 'Please enter your message',
+              })}
+            />
+            {errors.message && (
+              <div className={styles.formError}>
+                {' '}
+                <small>{errors.message.message}</small>
+              </div>
+            )}
+          </div>
+          {isSubmitSuccessful && isSuccess && (
+            <div className={`${styles.formMsgSent} ${styles.formSuccess}`}>
+              {message || 'Success. Message sent successfully'} 🚀
+            </div>
+          )}
+          {isSubmitSuccessful && !isSuccess && (
+            <div className={`${styles.formMsgSent} ${styles.formError}`}>
+              {message || 'Something went wrong. Please try later.'} 😞
+            </div>
+          )}
+          <button className={`primary-btn ${styles.formBtn}`}>
+            Send Message
+          </button>
+          {/* Form Action end */}
+        </form>
+      </div>
+    </React.Fragment>
   );
 }

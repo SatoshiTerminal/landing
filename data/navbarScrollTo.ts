@@ -1,3 +1,12 @@
+// ====== All Section names ======
+
+// Section 1 Overview
+// Section 2 Our Vision&Goal
+// Section 3 Company Mission
+// Section 4 Our Product
+// Section 5 Our Pricing
+// Section 6 Our Roadmap
+// Section 7 Contact Us
 
 // Navbar links here
 type NavbarScrollTo = {

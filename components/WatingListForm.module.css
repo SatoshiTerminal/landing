@@ -1,22 +1,44 @@
 /* Wating list form styles */
-.overlay {
+.watingList {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1000;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(23, 19, 19, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.watingList .show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 0;
 }
 
 /* ====== Styles for form start ====== */
 .form {
-  width: 70%;
+  position: relative;
+  width: 40%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 30px;
-  row-gap: 15px;
+  row-gap: 25px;
   padding: 30px 25px;
   background-color: #2C2C35;
   border-radius: 15px;

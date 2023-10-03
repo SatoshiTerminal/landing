@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // Components
+import WatingListForm from '@/components/WatingListForm';
 
 export default function HeaderHome() {
   return (
@@ -48,7 +49,7 @@ export default function HeaderHome() {
         </div>
         {/* Buttons */}
         <div className={styles.buttonsGroup}>
-          <button className="primary-btn">Join wating list</button>
+          <WatingListForm />
           <a
             className="primary-btn"
             target="_blank"
