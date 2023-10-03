@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // Components
-import WatingListForm from '@/components/WatingListForm';
 
 export default function HeaderHome() {
   return (
@@ -59,6 +58,7 @@ export default function HeaderHome() {
             Our Overview
           </a>
         </div>
+        {/* Wating list form */}
       </div>
     </header>
   );

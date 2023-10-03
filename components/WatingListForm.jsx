@@ -44,92 +44,94 @@ export default function WatingListForm() {
   // ============= Original code end =============
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={`${styles.form} ${cssClass}`}>
-      <h3 className={styles.formTitle}>Get in touch now</h3>
-      <input
-        type="checkbox"
-        id=""
-        className="hidden"
-        style={{ display: 'none' }}
-        {...register('botcheck')}
-      ></input>
+    <div styleName={styles.overlay}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <h3 className={styles.formTitle}>Get in touch now</h3>
+        <input
+          type="checkbox"
+          style={{ display: 'none' }}
+          {...register('botcheck')}
+        ></input>
 
-      {/* Form Action start */}
-      <div className="form-item">
-        <input
-          autoComplete="false"
-          className={`form-input ${
-            errors.name ? 'form-error' : 'form-success'
-          }`}
-          type="text"
-          placeholder="Your name*"
-          name="name"
-          {...register('name', {
-            required: 'Full name is required',
-            maxLength: 80,
-          })}
-        />
-        {errors.name && (
-          <div className="form-error">
-            <small>{errors.name.message}</small>
-          </div>
-        )}
-      </div>
-      <div className="form-item">
-        <input
-          id="email_address"
-          autoComplete="false"
-          className={`form-input ${
-            errors.name ? 'form-error' : 'form-success'
-          }`}
-          type="email"
-          placeholder="Your email*"
-          name="email"
-          {...register('email', {
-            required: 'Please enter your email',
-            pattern: {
-              value: /^\S+@\S+$/i,
-              message: 'Please enter a valid email',
-            },
-          })}
-        />
-        {errors.email && (
-          <div className="form-error">
-            <small>{errors.email.message}</small>
-          </div>
-        )}
-      </div>
-      <div className="form-textarea">
-        <textarea
-          className={`form-input form-textarea-iput ${
-            errors.name ? 'form-error' : 'form-success'
-          }`}
-          type="email"
-          placeholder="Your Message*"
-          name="message"
-          {...register('message', {
-            required: 'Please enter your message',
-          })}
-        />
-        {errors.message && (
-          <div className="form-error">
-            {' '}
-            <small>{errors.message.message}</small>
-          </div>
-        )}
-      </div>
-      {isSubmitSuccessful && isSuccess && (
-        <div className="form-msg-sent form-success">
-          {message || 'Success. Message sent successfully'} 🚀
+        {/* Form Action start */}
+        <div className={styles.formItem}>
+          <input
+            autoComplete="false"
+            className={`${styles.formInput} ${
+              errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+            }`}
+            type="text"
+            placeholder="Your name*"
+            name="name"
+            {...register('name', {
+              required: 'Full name is required',
+              maxLength: 80,
+            })}
+          />
+          {errors.name && (
+            <div className={styles.formError}>
+              <small>{errors.name.message}</small>
+            </div>
+          )}
         </div>
-      )}
-      {isSubmitSuccessful && !isSuccess && (
-        <div className="form-msg-sent form-error">
-          {message || 'Something went wrong. Please try later.'} 😞
+        <div className={styles.formItem}>
+          <input
+            id="email_address"
+            autoComplete="false"
+            className={`${styles.formInput} ${
+              errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+            }`}
+            type="email"
+            placeholder="Your email*"
+            name="email"
+            {...register('email', {
+              required: 'Please enter your email',
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: 'Please enter a valid email',
+              },
+            })}
+          />
+          {errors.email && (
+            <div className={styles.formError}>
+              <small>{errors.email.message}</small>
+            </div>
+          )}
         </div>
-      )}
-      <button className="primary-btn form-btn">Send Message</button>
-      {/* Form Action end */}
-    </form>
+        <div className={styles.formTextarea}>
+          <textarea
+            className={`${styles.formInput} ${styles.formTextareaIput} ${
+              errors.name ? 'form-error' : 'form-success'
+            }`}
+            type="email"
+            placeholder="Your Message*"
+            name="message"
+            {...register('message', {
+              required: 'Please enter your message',
+            })}
+          />
+          {errors.message && (
+            <div className={styles.formError}>
+              {' '}
+              <small>{errors.message.message}</small>
+            </div>
+          )}
+        </div>
+        {isSubmitSuccessful && isSuccess && (
+          <div className={`${styles.formMsgSent} ${styles.formSuccess}`}>
+            {message || 'Success. Message sent successfully'} 🚀
+          </div>
+        )}
+        {isSubmitSuccessful && !isSuccess && (
+          <div className={`${styles.formMsgSent} ${styles.formError}`}>
+            {message || 'Something went wrong. Please try later.'} 😞
+          </div>
+        )}
+        <button className={`primary-btn ${styles.formBtn}`}>
+          Send Message
+        </button>
+        {/* Form Action end */}
+      </form>
+    </div>
   );
 }
