@@ -122,23 +122,22 @@ export default function WatingListForm() {
           {/* Form Action start */}
           {/* First name */}
           <div className={styles.formItem}>
-            <label htmlFor="first_name" className={styles.formLabel}>
+            <label className={styles.formLabel}>
               First name *
+              <input
+                autoComplete="false"
+                className={`${styles.formInput} ${
+                  errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+                }`}
+                type="text"
+                placeholder="First name*"
+                name="First name"
+                {...register('firstName', {
+                  required: 'First name is required',
+                  maxLength: 80,
+                })}
+              />
             </label>
-            <input
-              id="first_name"
-              autoComplete="false"
-              className={`${styles.formInput} ${
-                errors.name ? `${styles.formError}` : `${styles.formSuccess}`
-              }`}
-              type="text"
-              placeholder="First name*"
-              name="First name"
-              {...register('firstName', {
-                required: 'First name is required',
-                maxLength: 80,
-              })}
-            />
             {errors.firstName && (
               <div className={styles.formError}>
                 <small>{errors.firstName.message}</small>
@@ -148,23 +147,22 @@ export default function WatingListForm() {
           {/* First name end */}
           {/* Last name */}
           <div className={styles.formItem}>
-            <label htmlFor="last_name" className={styles.formLabel}>
+            <label className={styles.formLabel}>
               Last name *
+              <input
+                autoComplete="false"
+                className={`${styles.formInput} ${
+                  errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+                }`}
+                type="text"
+                placeholder="Last name*"
+                name="Last name"
+                {...register('lastName', {
+                  required: 'Last name is required',
+                  maxLength: 80,
+                })}
+              />
             </label>
-            <input
-              id="last_name"
-              autoComplete="false"
-              className={`${styles.formInput} ${
-                errors.name ? `${styles.formError}` : `${styles.formSuccess}`
-              }`}
-              type="text"
-              placeholder="Last name*"
-              name="Last name"
-              {...register('lastName', {
-                required: 'Last name is required',
-                maxLength: 80,
-              })}
-            />
             {errors.lastName && (
               <div className={styles.formError}>
                 <small>{errors.lastName.message}</small>
@@ -174,26 +172,25 @@ export default function WatingListForm() {
           {/* Last name end */}
           {/* Email start */}
           <div className={styles.formItem}>
-            <label htmlFor="email_address" className={styles.formLabel}>
+            <label className={styles.formLabel}>
               Email Address*
+              <input
+                autoComplete="false"
+                className={`${styles.formInput} ${
+                  errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+                }`}
+                type="email"
+                placeholder="Your email*"
+                name="Email Address"
+                {...register('email', {
+                  required: 'Please enter your email',
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: 'Please enter a valid email',
+                  },
+                })}
+              />
             </label>
-            <input
-              id="email_address"
-              autoComplete="false"
-              className={`${styles.formInput} ${
-                errors.name ? `${styles.formError}` : `${styles.formSuccess}`
-              }`}
-              type="email"
-              placeholder="Your email*"
-              name="Email Address"
-              {...register('email', {
-                required: 'Please enter your email',
-                pattern: {
-                  value: /^\S+@\S+$/i,
-                  message: 'Please enter a valid email',
-                },
-              })}
-            />
             {errors.email && (
               <div className={styles.formError}>
                 <small>{errors.email.message}</small>
@@ -204,68 +201,65 @@ export default function WatingListForm() {
 
           {/* Phone start */}
           <div className={styles.formItem}>
-            <label htmlFor="phone_number" className={styles.formLabel}>
+            <label className={styles.formLabel}>
               Phone number (optional)
+              <input
+                autoComplete="false"
+                className={`${styles.formInput} ${
+                  errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+                }`}
+                type="text"
+                placeholder="Phone number (optional)"
+                name="Phone number"
+                {...register('phoneNumber', {
+                  required: false,
+                  minLength: 6,
+                  maxLength: 12,
+                })}
+              />
             </label>
-            <input
-              id="phone_number"
-              autoComplete="false"
-              className={`${styles.formInput} ${
-                errors.name ? `${styles.formError}` : `${styles.formSuccess}`
-              }`}
-              type="text"
-              placeholder="Phone number (optional)"
-              name="Phone number"
-              {...register('phoneNumber', {
-                required: false,
-                minLength: 6,
-                maxLength: 12,
-              })}
-            />
           </div>
           {/* Phone end */}
           {/* Country start */}
           <div className={styles.formItem}>
-            <label htmlFor="country_field" className={styles.formLabel}>
+            <label className={styles.formLabel}>
               Country (optional)
+              <input
+                autoComplete="false"
+                className={`${styles.formInput} ${
+                  errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+                }`}
+                type="text"
+                placeholder="Country (optional)"
+                name="Last name"
+                {...register('country', {
+                  required: false,
+                  maxLength: 30,
+                })}
+              />
             </label>
-            <input
-              id="country_field"
-              autoComplete="false"
-              className={`${styles.formInput} ${
-                errors.name ? `${styles.formError}` : `${styles.formSuccess}`
-              }`}
-              type="text"
-              placeholder="Country (optional)"
-              name="Last name"
-              {...register('country', {
-                required: false,
-                maxLength: 30,
-              })}
-            />
           </div>
           {/* Country end */}
 
           {/* Who are you? start */}
           <div className={styles.formItem}>
-            <label htmlFor="selectField" className={styles.formLabel}>
+            <label className={styles.formLabel}>
               Who are you? *
+              <select
+                className={styles.formSelect}
+                name="select"
+                {...register('whoAreYou', {
+                  required: 'Select an option',
+                })}
+              >
+                <option value="">None</option>
+                {otions.map((option, index) => (
+                  <option key={index} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
             </label>
-            <select
-              id="selectField"
-              className={styles.formSelect}
-              name="select"
-              {...register('whoAreYou', {
-                required: 'Select an option',
-              })}
-            >
-              <option value="">None</option>
-              {otions.map((option, index) => (
-                <option key={index} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
             {errors.whoAreYou && (
               <div className={styles.formError}>
                 <small>{errors.whoAreYou.message}</small>
@@ -275,21 +269,20 @@ export default function WatingListForm() {
           {/* Who are you? end */}
           {/* How did you hear about us ? start */}
           <div className={styles.formTextarea}>
-            <label htmlFor="message1" className={styles.formLabel}>
+            <label className={styles.formLabel}>
               How did you hear about us ? *
+              <textarea
+                className={`${styles.formInput} ${styles.formTextareaIput} ${
+                  errors.name ? 'form-error' : 'form-success'
+                }`}
+                type="email"
+                placeholder="How did you hear about us?*"
+                name="message"
+                {...register('messageHearAbout', {
+                  required: 'Please enter your message',
+                })}
+              />
             </label>
-            <textarea
-              id="message1"
-              className={`${styles.formInput} ${styles.formTextareaIput} ${
-                errors.name ? 'form-error' : 'form-success'
-              }`}
-              type="email"
-              placeholder="How did you hear about us?*"
-              name="message"
-              {...register('messageHearAbout', {
-                required: 'Please enter your message',
-              })}
-            />
             {errors.messageHearAbout && (
               <div className={styles.formError}>
                 {' '}
@@ -300,21 +293,20 @@ export default function WatingListForm() {
           {/* How did you hear about us ? end */}
           {/* Reason for Request start */}
           <div className={styles.formTextarea}>
-            <label htmlFor="message2" className={styles.formLabel}>
+            <label className={styles.formLabel}>
               Reason for Request *
+              <textarea
+                className={`${styles.formInput} ${styles.formTextareaIput} ${
+                  errors.name ? 'form-error' : 'form-success'
+                }`}
+                type="email"
+                placeholder="Reason for Request*"
+                name="message"
+                {...register('messageReason', {
+                  required: 'Please enter your message',
+                })}
+              />
             </label>
-            <textarea
-              id="message2"
-              className={`${styles.formInput} ${styles.formTextareaIput} ${
-                errors.name ? 'form-error' : 'form-success'
-              }`}
-              type="email"
-              placeholder="Reason for Request*"
-              name="message"
-              {...register('messageReason', {
-                required: 'Please enter your message',
-              })}
-            />
             {errors.messageReason && (
               <div className={styles.formError}>
                 {' '}
