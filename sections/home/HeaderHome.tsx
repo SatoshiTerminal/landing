@@ -49,6 +49,7 @@ export default function HeaderHome() {
         </div>
         {/* Buttons */}
         <div className={styles.buttonsGroup}>
+          {/* Button "Join waiting list" list iside component WatingListForm */}
           <WatingListForm />
           <a
             className="primary-btn"

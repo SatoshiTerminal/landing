@@ -48,13 +48,15 @@ export default function WatingListForm() {
 
   // Wating list show hide
   const [show, setShow] = useState(false);
-
+  // Show and disable scroll
   const handleShow = () => {
     setShow(true);
+    document.body.style.overflow = 'hidden';
   };
-
+  // Hide and enable scroll
   const handleClose = () => {
     setShow(false);
+    document.body.style.overflow = 'unset';
   };
 
   return (
@@ -81,27 +83,63 @@ export default function WatingListForm() {
           ></input>
 
           {/* Form Action start */}
+          {/* First name */}
           <div className={styles.formItem}>
+            <label htmlFor="first_name" className={styles.formLabel}>
+              First name *
+            </label>
             <input
+              id="first_name"
               autoComplete="false"
               className={`${styles.formInput} ${
                 errors.name ? `${styles.formError}` : `${styles.formSuccess}`
               }`}
               type="text"
-              placeholder="Your name*"
-              name="name"
-              {...register('name', {
-                required: 'Full name is required',
+              placeholder="First name*"
+              name="First name"
+              {...register('firstName', {
+                required: 'First name is required',
                 maxLength: 80,
               })}
             />
-            {errors.name && (
+            {errors.firstName && (
               <div className={styles.formError}>
-                <small>{errors.name.message}</small>
+                <small>{errors.firstName.message}</small>
               </div>
             )}
           </div>
+          {/* First name end */}
+          {/* Last name */}
           <div className={styles.formItem}>
+            <label htmlFor="last_name" className={styles.formLabel}>
+              Last name *
+            </label>
+            <input
+              id="last_name"
+              autoComplete="false"
+              className={`${styles.formInput} ${
+                errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+              }`}
+              type="text"
+              placeholder="Last name*"
+              name="Last name"
+              {...register('lname', {
+                required: 'Last name is required',
+                maxLength: 80,
+              })}
+            />
+            {errors.lname && (
+              <div className={styles.formError}>
+                <small>{errors.lname.message}</small>
+              </div>
+            )}
+          </div>
+          {/* Last name end */}
+          {/* Email start */}
+          <div className={`${styles.formItem} ${styles.formEmail}`}>
+            <label htmlFor="email_address" className={styles.formLabel}>
+              Email Address*
+            </label>
             <input
               id="email_address"
               autoComplete="false"
@@ -110,7 +148,7 @@ export default function WatingListForm() {
               }`}
               type="email"
               placeholder="Your email*"
-              name="email"
+              name="Email Address"
               {...register('email', {
                 required: 'Please enter your email',
                 pattern: {
@@ -125,6 +163,8 @@ export default function WatingListForm() {
               </div>
             )}
           </div>
+          {/* Email end */}
+          
           <div className={styles.formTextarea}>
             <textarea
               className={`${styles.formInput} ${styles.formTextareaIput} ${

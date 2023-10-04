@@ -1,0 +1,23 @@
+"First Name*" [text box]
+"Last Name" [text box]
+"Email Address*" [text box]
+"Phone (optional)" [text box]
+"Country (optional)" [text box]
+"Who are you" [Menu dropdown]
+• "Private Investor"
+• "Market Maker"
+• “Hedge Fund"
+• "Bank"
+• "Exchange"
+• "Venture Capital Fund"
+• "Student or Academic"
+• "Journalist or Publisher"
+• "C-Suite or Executive"
+• "Governance Platform"
+• "Node Operator"
+• "Exchange"
+• "Protocol or Project"
+• "Fintech Company"
+• "None of these/Other"
+How did you hear about us? [text box]
+Reason for Request [text box]
