@@ -17,3 +17,42 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
+
+.contentItem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  width: 220px;
+  height: 90px;
+}
+
+.itemDesc {
+  font-size: 16px;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 10px;
+}
+
+.socialItem {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--primary-color);
+  font-size: 20px;
+  transition: var(--transition);
+}
+
+.socialItem:hover {
+  background-color: var(--hover);
+  color: var(--text-color);
+}
+
