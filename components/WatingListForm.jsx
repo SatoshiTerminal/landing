@@ -112,6 +112,7 @@ export default function WatingListForm() {
             <AiOutlineClose className={styles.closeIcon} />
           </div>
           <h3 className={styles.formTitle}>Join the waiting list</h3>
+          {/* Botcheck - hidden input */}
           <input
             type="checkbox"
             style={{ display: 'none' }}
