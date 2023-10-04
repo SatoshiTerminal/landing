@@ -88,6 +88,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialItem}
+                aria-label="youtube link"
               >
                 <AiOutlineYoutube />
               </a>
@@ -97,6 +98,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialItem}
+                aria-label="twitter link"
               >
                 <AiOutlineTwitter />
               </a>
@@ -106,6 +108,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialItem}
+                aria-label="facebook link"
               >
                 <BiLogoFacebook />
               </a>
@@ -115,6 +118,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialItem}
+                aria-label="skype link"
               >
                 <AiFillSkype />
               </a>
@@ -166,7 +170,7 @@ export default function Footer() {
         <div className={styles.copyright}>
           <p>Copyright © 2023. All Rights Reserved Satoshi Terminal</p>
           <div className={styles.copyrightLinks}>
-            <Link className={styles.footerLink} href="/terms-services">Terms & Services</Link>
+            <Link  className={styles.footerLink} href="/terms-services">Terms & Services</Link>
             <Link className={styles.footerLink} href="/privacy-policy">Privacy Policy</Link>
             <Link className={styles.footerLink} href="/login">Login / Signup</Link>
           </div>

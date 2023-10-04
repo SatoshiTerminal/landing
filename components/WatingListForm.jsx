@@ -248,11 +248,11 @@ export default function WatingListForm() {
 
           {/* Who are you? start */}
           <div className={styles.formItem}>
-            <label htmlFor="select" className={styles.formLabel}>
+            <label htmlFor="selectField" className={styles.formLabel}>
               Who are you? *
             </label>
             <select
-              id="select"
+              id="selectField"
               className={styles.formSelect}
               name="select"
               {...register('whoAreYou', {
