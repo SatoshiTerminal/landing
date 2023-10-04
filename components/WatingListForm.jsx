@@ -86,7 +86,7 @@ export default function WatingListForm() {
     setShow(true);
     document.body.style.overflow = 'hidden';
   };
-  // Hide and enable scroll
+  // Hide and disable scroll
   const handleClose = () => {
     setShow(false);
     document.body.style.overflow = 'unset';
@@ -107,6 +107,7 @@ export default function WatingListForm() {
         }`}
       >
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          {/* close button */}
           <div onClick={handleClose} aria-label="close form wating list">
             <AiOutlineClose className={styles.closeIcon} />
           </div>
@@ -171,7 +172,7 @@ export default function WatingListForm() {
           </div>
           {/* Last name end */}
           {/* Email start */}
-          <div className={`${styles.formItem} ${styles.formEmail}`}>
+          <div className={styles.formItem}>
             <label htmlFor="email_address" className={styles.formLabel}>
               Email Address*
             </label>
@@ -244,7 +245,8 @@ export default function WatingListForm() {
           </div>
           {/* Country end */}
 
-          <div styleName={styles.formItem}>
+          {/* Who are you? start */}
+          <div className={styles.formItem}>
             <label htmlFor="select" className={styles.formLabel}>
               Who are you? *
             </label>
@@ -257,8 +259,8 @@ export default function WatingListForm() {
               })}
             >
               <option value="">None</option>
-              {otions.map((option) => (
-                <option key={option.value} value={option.value}>
+              {otions.map((option, index) => (
+                <option key={index} value={option.value}>
                   {option.label}
                 </option>
               ))}
@@ -269,7 +271,8 @@ export default function WatingListForm() {
               </div>
             )}
           </div>
-
+          {/* Who are you? end */}
+          {/* How did you hear about us ? start */}
           <div className={styles.formTextarea}>
             <label htmlFor="message1" className={styles.formLabel}>
               How did you hear about us ? *
@@ -282,18 +285,19 @@ export default function WatingListForm() {
               type="email"
               placeholder="How did you hear about us?*"
               name="message"
-              {...register('message', {
+              {...register('messageHearAbout', {
                 required: 'Please enter your message',
               })}
             />
-            {errors.message && (
+            {errors.messageHearAbout && (
               <div className={styles.formError}>
                 {' '}
-                <small>{errors.message.message}</small>
+                <small>{errors.messageHearAbout.message}</small>
               </div>
             )}
           </div>
-
+          {/* How did you hear about us ? end */}
+          {/* Reason for Request start */}
           <div className={styles.formTextarea}>
             <label htmlFor="message2" className={styles.formLabel}>
               Reason for Request *
@@ -306,17 +310,18 @@ export default function WatingListForm() {
               type="email"
               placeholder="Reason for Request*"
               name="message"
-              {...register('message', {
+              {...register('messageReason', {
                 required: 'Please enter your message',
               })}
             />
-            {errors.message && (
+            {errors.messageReason && (
               <div className={styles.formError}>
                 {' '}
-                <small>{errors.message.message}</small>
+                <small>{errors.messageReason.message}</small>
               </div>
             )}
           </div>
+          {/* Reason for Request end */}
           {isSubmitSuccessful && isSuccess && (
             <div className={`${styles.formMsgSent} ${styles.formSuccess}`}>
               {message || 'Success. Message sent successfully'} 🚀

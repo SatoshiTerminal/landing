@@ -1,0 +1,19 @@
+.footer {
+  background-color: var(--bg-color-dark2);
+  position: relative;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  left: 25%;
+  top: 0;
+  width: 50%;
+  height: 2px;
+  background: #1F262F;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}

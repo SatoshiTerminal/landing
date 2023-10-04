@@ -1,6 +1,6 @@
 .overview {
   position: relative;
-  background-color: var(--bg-color-dark);
+  /* background-color: var(--bg-color-dark); */
 }
 
 .imgAbsolute1 {
@@ -19,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   gap: 50px;
-  align-items: end;
+  align-items: flex-end;
   margin-bottom: 150px; 
 }
 
@@ -35,7 +35,6 @@
   flex-direction: column;
   gap: 40px;
   margin-left: 90px;
-  z-index: 5;
 }
 
 .listItem1 {
@@ -62,20 +61,20 @@
   position: absolute;
   left: -80px;
   bottom: -80px;
-  z-index: 1;
+  z-index: -1;
   width: 417px;
   height: 331px;
 }
-
+/* Delete z index, becouse posible make problem with Wating List */
 .imgReactangle2 {
   object-fit: contain;
-  z-index: 2;
+  /* z-index: 2; */
 }
-
+/* Delete z index, becouse posible make problem with Wating List */
 .imgMain {
   width: 466px;
   height: 231px;
-  z-index: 3;
+  /* z-index: 3; */
 }
 
 .imgMain2 {

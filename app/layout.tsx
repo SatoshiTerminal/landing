@@ -57,6 +57,7 @@ export default function RootLayout({
       <body className={`${outfit.variable} ${plus_jakarta_sans.variable}`}>        
         <Navbar />
         {children}
+        <Footer />
         {/* Vercel Analytics */}
         {/* <Analytics /> */}
       </body>
