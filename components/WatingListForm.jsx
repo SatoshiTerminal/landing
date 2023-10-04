@@ -271,9 +271,9 @@ export default function WatingListForm() {
           </div>
 
           <div className={styles.formTextarea}>
-            <div htmlFor="message1" className={styles.formLabel}>
+            <label htmlFor="message1" className={styles.formLabel}>
               How did you hear about us ? *
-            </div>
+            </label>
             <textarea
               id="message1"
               className={`${styles.formInput} ${styles.formTextareaIput} ${
@@ -295,9 +295,9 @@ export default function WatingListForm() {
           </div>
 
           <div className={styles.formTextarea}>
-            <div htmlFor="message2" className={styles.formLabel}>
+            <label htmlFor="message2" className={styles.formLabel}>
               Reason for Request *
-            </div>
+            </label>
             <textarea
               id="message2"
               className={`${styles.formInput} ${styles.formTextareaIput} ${
