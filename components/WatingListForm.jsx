@@ -8,6 +8,39 @@ import styles from './WatingListForm.module.css';
 // Icons
 import { AiOutlineClose } from 'react-icons/ai';
 
+const otions = [
+  // option 1
+  { value: 'Private Investor', label: 'Private Investor' },
+  // option 2
+  { value: 'Market Maker', label: 'Market Maker' },
+  // option 3
+  { value: 'Hedge Fund', label: 'Hedge Fund' },
+  // option 4
+  { value: 'Bank', label: 'Bank' },
+  // option 5
+  { value: 'Exchange', label: 'Exchange' },
+  // option 6
+  { value: 'Venture Capital Fund', label: 'Venture Capital Fund' },
+  // option 7
+  { value: 'Student or Academic', label: 'Student or Academic' },
+  // option 8
+  { value: 'Journalist or Publisher', label: 'Journalist or Publisher' },
+  // option 9
+  { value: 'C-Suite or Executive', label: 'C-Suite or Executive' },
+  // option 10
+  { value: 'Governance Platform"', label: 'Governance Platform' },
+  // option 11
+  { value: 'Node Operator', label: 'Node Operator' },
+  // option 12
+  { value: 'Exchange', label: 'Exchange' },
+  // option 13
+  { value: 'Protocol or Project', label: 'Protocol or Project' },
+  // option 14
+  { value: 'Fintech Company', label: 'Fintech Company' },
+  // option 15
+  { value: 'None of these/Other', label: 'None of these/Other' },
+];
+
 export default function WatingListForm() {
   // Waiting list form
   const {
@@ -58,6 +91,8 @@ export default function WatingListForm() {
     setShow(false);
     document.body.style.overflow = 'unset';
   };
+
+  // Select
 
   return (
     // Button show hide
@@ -123,14 +158,14 @@ export default function WatingListForm() {
               type="text"
               placeholder="Last name*"
               name="Last name"
-              {...register('lname', {
+              {...register('lastName', {
                 required: 'Last name is required',
                 maxLength: 80,
               })}
             />
-            {errors.lname && (
+            {errors.lastName && (
               <div className={styles.formError}>
-                <small>{errors.lname.message}</small>
+                <small>{errors.lastName.message}</small>
               </div>
             )}
           </div>
@@ -164,14 +199,112 @@ export default function WatingListForm() {
             )}
           </div>
           {/* Email end */}
-          
+
+          {/* Phone start */}
+          <div className={styles.formItem}>
+            <label htmlFor="phone_number" className={styles.formLabel}>
+              Phone number (optional)
+            </label>
+            <input
+              id="phone_number"
+              autoComplete="false"
+              className={`${styles.formInput} ${
+                errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+              }`}
+              type="text"
+              placeholder="Phone number (optional)"
+              name="Phone number"
+              {...register('phoneNumber', {
+                required: false,
+                minLength: 6,
+                maxLength: 12,
+              })}
+            />
+          </div>
+          {/* Phone end */}
+          {/* Country start */}
+          <div className={styles.formItem}>
+            <label htmlFor="country_field" className={styles.formLabel}>
+              Country (optional)
+            </label>
+            <input
+              id="country_field"
+              autoComplete="false"
+              className={`${styles.formInput} ${
+                errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+              }`}
+              type="text"
+              placeholder="Country (optional)"
+              name="Last name"
+              {...register('country', {
+                required: false,
+                maxLength: 30,
+              })}
+            />
+          </div>
+          {/* Country end */}
+
+          <div styleName={styles.formItem}>
+            <label htmlFor="select" className={styles.formLabel}>
+              Who are you? *
+            </label>
+            <select
+              id="select"
+              className={styles.formSelect}
+              name="select"
+              {...register('whoAreYou', {
+                required: 'Select an option',
+              })}
+            >
+              <option value="">None</option>
+              {otions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            {errors.whoAreYou && (
+              <div className={styles.formError}>
+                <small>{errors.whoAreYou.message}</small>
+              </div>
+            )}
+          </div>
+
           <div className={styles.formTextarea}>
+            <div htmlFor="message1" className={styles.formLabel}>
+              How did you hear about us ? *
+            </div>
             <textarea
+              id="message1"
               className={`${styles.formInput} ${styles.formTextareaIput} ${
                 errors.name ? 'form-error' : 'form-success'
               }`}
               type="email"
-              placeholder="Your Message*"
+              placeholder="How did you hear about us?*"
+              name="message"
+              {...register('message', {
+                required: 'Please enter your message',
+              })}
+            />
+            {errors.message && (
+              <div className={styles.formError}>
+                {' '}
+                <small>{errors.message.message}</small>
+              </div>
+            )}
+          </div>
+
+          <div className={styles.formTextarea}>
+            <div htmlFor="message2" className={styles.formLabel}>
+              Reason for Request *
+            </div>
+            <textarea
+              id="message2"
+              className={`${styles.formInput} ${styles.formTextareaIput} ${
+                errors.name ? 'form-error' : 'form-success'
+              }`}
+              type="email"
+              placeholder="Reason for Request*"
               name="message"
               {...register('message', {
                 required: 'Please enter your message',
