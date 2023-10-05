@@ -26,7 +26,7 @@ export default function OurProduct() {
             titleBeforeAccent="The world`s"
             titleAccent="First Blockchain"
             titleAfterAccent="keyboard"
-            description="Our Bloomberg reminiscent crypto research platform provides Wall Street a digital environment they are familiar with, allowing them to analyze crypto assets the same way they analyze stocks and bonds."
+            description="Our Bloomberg reminiscent crypto research platform provides Wall Street a digital environment they are familiar with along with a Bloomberg-terminal inspired custom keyboard"
           />
         </div>
         {/* Header end */}
