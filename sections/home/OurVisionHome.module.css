@@ -59,9 +59,9 @@
   rotate: 90deg;
 }
 
-/* .goalsItem:nth-child(1) .arrowIconLeft {
+.goalsItem:nth-child(1) .arrowIconLeft {
   display: none;
-} */
+}
 
 /* Previous version with arrow top for Item 6 */
 /* .goalsItem:nth-child(1) .arrowIconLeft {
