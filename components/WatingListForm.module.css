@@ -237,6 +237,17 @@
 }
 
 @media only screen and (max-width: 576px) {
+  .watingList {
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+  }
+
+  .form {
+    padding: 30px 15px;
+  }
+
   .formLabel {
     font-size: 16px;
   }
@@ -247,6 +258,12 @@
 
   .formTextarea {
     margin-bottom: 50px;
+  }
+
+  .closeIcon {
+    font-size: 25px;
+    top: 10px;
+    right: 10px;
   }
 }
 

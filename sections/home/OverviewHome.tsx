@@ -35,11 +35,11 @@ export default function OverviewHome() {
         <div className={styles.contentTop}>
           {/* Left side */}
           <div className={styles.contentLeft}>
+          {/* The first crypto research platform designed for Wall Street */}
             <SectionHeader
               subtitle="Overview"
-              titleBeforeAccent="The Satoshi Terminal is the first"
-              titleAccent="crypto"
-              titleAfterAccent="research platform"
+              titleBeforeAccent="The first crypto research platform designed for"
+              titleAccent="Wall Street"
               description="Billions are poured into cryptocurrency and blockchain companies by Wall Street. Yet, a less-than-positive perception of the industryremains a significant challenge. We want to change that."
             />
 
