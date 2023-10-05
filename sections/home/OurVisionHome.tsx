@@ -1,6 +1,4 @@
-'use client';
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import styles from './OurVisionHome.module.css';
 
@@ -11,10 +9,7 @@ import SectionHeader from '@/components/SectionHeader';
 import { ourVisionGoalsData } from '@/data/ourVisionGoalsData';
 
 export default function OurVision() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    rootMargin: '-100px 0px',
-  });
+
 
   return (
     <section id="section-2" className={`${styles.ourVision} home-sect-p`}>
@@ -39,15 +34,12 @@ export default function OurVision() {
             </a>
           </div>
           <Image
-            ref={ref}
             src="/images/home/our-vision/bull-run.svg"
             alt="our vision"
             width={600}
             height={428}
             quality={100}
-            className={`${styles.headerImg} ${
-              inView ? `rotateUp` : 'invisible'
-            }`}
+            className={styles.headerImg}
           />
         </div>
         {/* Header end */}
