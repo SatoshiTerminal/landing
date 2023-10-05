@@ -35,7 +35,7 @@ export default function OurVision() {
               href="/images/home/header/Satoshi-Terminal-Pitchdeck.pdf"
               rel="noopener noreferrer"
             >
-              Satoshi info
+              Our overview
             </a>
           </div>
           <Image
@@ -56,7 +56,6 @@ export default function OurVision() {
         <div className={styles.ourGoals}>
           {/* Mobile title start */}
           <div className={`${styles.titleGoalsBox} ${styles.mobileTitle}`}>
-            <div className={styles.mainSubtitleGoals}>Join us</div>
             <h3 className={styles.mainTitleGoals}>Our goals</h3>
           </div>
           {/* Mobile title end*/}

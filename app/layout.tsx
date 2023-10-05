@@ -5,8 +5,8 @@ import type { Metadata } from 'next';
 import { Outfit, Plus_Jakarta_Sans  } from 'next/font/google';
 
 // ==== Components ====
-// Navbar srool to sections
-import Navbar from '@/components/navbar-scroll-section/NavbarScrollTo';
+// Navbar srool to sections uncomment if needed
+// import Navbar from '@/components/navbar-scroll-section/NavbarScrollTo';
 // Footer
 import Footer from '@/components/Footer';
 
@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.variable} ${plus_jakarta_sans.variable}`}>        
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
         <Footer />
         {/* Vercel Analytics */}
