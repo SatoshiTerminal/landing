@@ -134,7 +134,10 @@ export default function WatingListForm() {
                 name="First name"
                 {...register('firstName', {
                   required: 'First name is required',
-                  maxLength: 80,
+                  maxLength: {
+                    value: 25,
+                    message: 'Maximum length should be 25',
+                  },
                 })}
               />
             </label>
@@ -159,7 +162,10 @@ export default function WatingListForm() {
                 name="Last name"
                 {...register('lastName', {
                   required: 'Last name is required',
-                  maxLength: 80,
+                  maxLength: {
+                    value: 25,
+                    message: 'Maximum length should be 25',
+                  },
                 })}
               />
             </label>
@@ -213,11 +219,22 @@ export default function WatingListForm() {
                 name="Phone number"
                 {...register('phoneNumber', {
                   required: false,
-                  minLength: 6,
-                  maxLength: 12,
+                  minLength: {
+                    value: 6,
+                    message: 'Minimum length should be 6',
+                  },
+                  maxLength: {
+                    value: 12,
+                    message: 'Maximum length should be 12',
+                  },
                 })}
               />
             </label>
+            {errors.phoneNumber && (
+              <div className={styles.formError}>
+                <small>{errors.phoneNumber.message}</small>
+              </div>
+            )}
           </div>
           {/* Phone end */}
           {/* Country start */}
@@ -234,10 +251,18 @@ export default function WatingListForm() {
                 name="Last name"
                 {...register('country', {
                   required: false,
-                  maxLength: 30,
+                  maxLength: {
+                    value: 25,
+                    message: 'Maximum length should be 25',
+                  },
                 })}
               />
             </label>
+            {errors.country && (
+              <div className={styles.formError}>
+                <small>{errors.country.message}</small>
+              </div>
+            )}
           </div>
           {/* Country end */}
 
@@ -309,7 +334,6 @@ export default function WatingListForm() {
             </label>
             {errors.messageReason && (
               <div className={styles.formError}>
-                {' '}
                 <small>{errors.messageReason.message}</small>
               </div>
             )}
