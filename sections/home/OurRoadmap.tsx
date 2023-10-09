@@ -4,6 +4,9 @@ import styles from './OurRoadmap.module.css';
 // Components
 import SectionHeader from '@/components/SectionHeader';
 
+// Data
+import { ourRoadmapData } from '@/data/ourRoadmapData';
+
 export default function OurRoadmap() {
   return (
     <section id="section-6" className={`${styles.ourRoadmap} home-sect-p`}>
@@ -23,16 +26,16 @@ export default function OurRoadmap() {
           {/* Item 1 */}
           <div className={`${styles.roadmapItem} ${styles.left10}`}>
             <div className={styles.itemContent}>
-              <span className={styles.dateItemContent}>Q1 2024</span>
+              <span className={styles.dateItemContent}>Q4 2022</span>
               <ul className={styles.itemList}>
                 <li className={styles.itemListSingle}>
-                  <span>Crypto Wallet version release</span>
+                  <span>Strategy & Technical</span>
                 </li>
                 <li className={styles.itemListSingle}>
-                  <span>Platform ealier version development</span>
+                  <span>Team Formation</span>
                 </li>
                 <li className={styles.itemListSingle}>
-                  <span>Testnet launch start</span>
+                  <span>Concept development</span>
                 </li>
               </ul>
             </div>
@@ -40,16 +43,16 @@ export default function OurRoadmap() {
           {/* Item 2 */}
           <div className={`${styles.roadmapItem} ${styles.left20}`}>
             <div className={styles.itemContent}>
-              <span className={styles.dateItemContent}>Q1 2024</span>
+              <span className={styles.dateItemContent}>Q1 2023</span>
               <ul className={styles.itemList}>
                 <li className={styles.itemListSingle}>
-                  <span>Crypto Wallet version release</span>
+                  <span>Terminal prototype designed</span>
                 </li>
                 <li className={styles.itemListSingle}>
-                  <span>Platform ealier version development</span>
+                  <span>Technical specifications defined</span>
                 </li>
                 <li className={styles.itemListSingle}>
-                  <span>Testnet launch start</span>
+                  <span>Early partnerships</span>
                 </li>
               </ul>
             </div>

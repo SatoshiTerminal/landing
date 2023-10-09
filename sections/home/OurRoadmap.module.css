@@ -68,6 +68,34 @@
   top: 47px;
   transform: translateX(-18%);
 }
+/* Position for all item  */
+.roadmapItem:nth-child(1) {
+  left: 10%;
+}
+.roadmapItem:nth-child(2) {
+  left: 20%;
+}
+.roadmapItem:nth-child(3) {
+  left: 30%;
+}
+.roadmapItem:nth-child(4) {
+  left: 40%;
+}
+.roadmapItem:nth-child(5) {
+  left: 50%;
+}
+.roadmapItem:nth-child(6) {
+  left: 60%;
+}
+.roadmapItem:nth-child(7) {
+  left: 70%;
+}
+.roadmapItem:nth-child(8) {
+  left: 80%;
+}
+.roadmapItem:nth-child(9) {
+  left: 90%;
+}
 
 .itemContent {
   position: relative;
@@ -117,12 +145,12 @@
   color: #fff;
 }
 
-.left10 {
+/* .left10 {
   left: 10%;
-}
+} 
 .left20 {
   left: 20%;
-}
+} 
 .left30 {
   left: 30%;
 }
@@ -143,7 +171,7 @@
 }
 .left90 {
   left: 90%;
-}
+} */
 
 @media only screen and (max-width: 1500px) {
 
