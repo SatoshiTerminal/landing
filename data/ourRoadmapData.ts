@@ -14,7 +14,7 @@ type OurRoadmapType = {
   ];
 }[];
 
-// Roadmap have only 9 items from 10% to 90% in 10% steps
+// Roadmap have only 9 items from 10% left position to 90%.  This is 10% to next steps
 export const ourRoadmapData: OurRoadmapType = [
   // Item 1
   {
@@ -106,7 +106,7 @@ export const ourRoadmapData: OurRoadmapType = [
       },
     ],
   },
-  // Item 6
+  // Item 7
   {
     date: 'Q2 2024',
     list: [
@@ -121,7 +121,7 @@ export const ourRoadmapData: OurRoadmapType = [
       },
     ],
   },
-  // Item 6
+  // Item 8
   {
     date: 'Q3 2024',
     list: [
@@ -136,7 +136,7 @@ export const ourRoadmapData: OurRoadmapType = [
       },
     ],
   },
-  // Item 7
+  // Item 9
   {
     date: 'Q4 2024',
     list: [
@@ -151,59 +151,70 @@ export const ourRoadmapData: OurRoadmapType = [
       },
     ],
   },
-  // Item 8
-  {
-    date: 'Q1 2025',
-    list: [
-      {
-        title: 'Expansion to international markets',
-      },
-      {
-        title: 'Mass manufacturing & distribution',
-      },
-      {
-        title: 'Enterprise solution optimization',
-      },
-    ],
-  },
+  // Item 10
+  // {
+  //   date: 'Q1 2025',
+  //   list: [
+  //     {
+  //       title: 'Expansion to international markets',
+  //     },
+  //     {
+  //       title: 'Mass manufacturing & distribution',
+  //     },
+  //     {
+  //       title: 'Enterprise solution optimization',
+  //     },
+  //   ],
+  // },
 ];
+
+// Just text from Slack chat
 
 // Q4 2022 Item 1
 // -Strategy & Technical
 // -Team Formation
 // -Concept development
+
 // Q1 2023 Item 2
 // -Terminal prototype designed
 // -Technical specifications defined
 // -Early partnerships
+
 // Q2 2023 Item 3
 // -Prototype testing
 // -Key vendors arranged
 // -Enterprise solution planned
+
 // Q3  2023 Item 4
 // -Prototype improvements
 // -Manufacturing partnership
 // -Hardware Compliances met
+
 // Q4 2023 Item 5
 // -Expansion of team
 // -Model & pricing finalized
 // -Commercialization strategy
+
 // Q1 2024 Item 6
 // -Production begins
 // -Product distribution planned
 // -Warehouse & logistics coordination
+
 // Q2 2024 Item 7
 // -Marketing and awareness campaign
 // -Terminal samples shipped
 // -Release to pre users
+
 // Q3 2024 Item 8
 // -Official release
 // -Keyboard & Monitor Distribution
 // -Trade shows and virtual events
+
 // Q4 2024 Item 9
 // -Growth strategy optimized
 // -Sales support tailored for new markets
 // -Team expanded
+
 // Q1 2025 Item 10
 // -Expansion to international markets
 // -Mass manufacturing & distribution

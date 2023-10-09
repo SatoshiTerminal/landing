@@ -50,24 +50,7 @@
   background-color: #00e4ff;
   left: calc(50% - 1px);
 }
-/* Decoration line for Top */
-.roadmapItem:nth-child(2n + 1)::before {
-  top: -44px;
-}
-/* Decoration line for Bottom */
-.roadmapItem:nth-child(2n) .itemContent {
-  top: 44px;
-}
-/* Line top */
-.roadmapItem:nth-child(2n + 1) .itemContent {
-  bottom: 44px;
-  transform: translateY(-100%) translateX(-18%);
-}
-/* Line bottom */
-.roadmapItem:nth-child(2n) .itemContent {
-  top: 47px;
-  transform: translateX(-18%);
-}
+
 /* Position for all item  */
 .roadmapItem:nth-child(1) {
   left: 10%;
@@ -95,6 +78,25 @@
 }
 .roadmapItem:nth-child(9) {
   left: 90%;
+}
+
+/* Decoration line for Top */
+.roadmapItem:nth-child(2n + 1)::before {
+  top: -44px;
+}
+/* Decoration line for Bottom */
+.roadmapItem:nth-child(2n) .itemContent {
+  top: 44px;
+}
+/* Line top */
+.roadmapItem:nth-child(2n + 1) .itemContent {
+  bottom: 44px;
+  transform: translateY(-100%) translateX(-18%);
+}
+/* Line bottom */
+.roadmapItem:nth-child(2n) .itemContent {
+  top: 47px;
+  transform: translateX(-18%);
 }
 
 .itemContent {
@@ -145,34 +147,6 @@
   color: #fff;
 }
 
-/* .left10 {
-  left: 10%;
-} 
-.left20 {
-  left: 20%;
-} 
-.left30 {
-  left: 30%;
-}
-.left40 {
-  left: 40%;
-}
-.left50 {
-  left: 50%;
-}
-.left60 {
-  left: 60%;
-}
-.left70 {
-  left: 70%;
-}
-.left80 {
-  left: 80%;
-}
-.left90 {
-  left: 90%;
-} */
-
 @media only screen and (max-width: 1500px) {
 
   /* Vertical setup */
@@ -206,21 +180,22 @@
   }
 
   .itemContent {
-    width: 250px;
+    width: 350px;
+    text-align: left;
   }
 
   /* Position for all item in the right */
   .roadmapItem:nth-child(2n) .itemContent {
     top: auto;
     left: 150px;
-    bottom: 66px;
+    bottom: 57px;
     transform: none;
   }
 
   .roadmapItem:nth-child(2n + 1) .itemContent {
     right: auto;
     left: 150px;
-    bottom: 66px;
+    bottom: 57px;
     transform: none;
   }
 
@@ -232,9 +207,6 @@
 @media only screen and (max-width: 450px) {
   .roadmapItem::before {
     width: 10px;
-  }
-
-  .itemContent {
   }
 
   .roadmapItem:nth-child(2n) .itemContent {
