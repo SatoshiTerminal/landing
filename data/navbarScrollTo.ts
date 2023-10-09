@@ -19,36 +19,36 @@ export const navbarScrollTo: NavbarScrollTo[] = [
   {
     id: 1,
     title: 'Overview',
-    scrollTo: '#section-1',
+    scrollTo: '#overview',
   },
   {
     id: 2,
     title: 'Our Vision',
-    scrollTo: '#section-2',
+    scrollTo: '#our_vision',
   },
   {
     id: 3,
     title: 'Mission',
-    scrollTo: '#section-3',
+    scrollTo: '#mission',
   },
   {
     id: 4,
     title: 'Product',
-    scrollTo: '#section-4',
+    scrollTo: '#product',
   },
   {
     id: 5,
     title: 'Pricing',
-    scrollTo: '#section-5',
+    scrollTo: '#pricing',
   },
   {
     id: 6,
     title: 'Roadmap',
-    scrollTo: '#section-6',
+    scrollTo: '#roadmap',
   },
   {
     id: 7,
     title: 'Contact',
-    scrollTo: '#section-7',
+    scrollTo: '#contact',
   },
 ];

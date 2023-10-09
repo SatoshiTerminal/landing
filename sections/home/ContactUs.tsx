@@ -11,7 +11,7 @@ import { docsData } from '@/data/contactUsData';
 
 export default function ContactUs() {
   return (
-    <section id="section-7" className={`${styles.contactUs} home-sect-p`}>
+    <section id="contact" className={`${styles.contactUs} home-sect-p`}>
       <div className="container">
         <SectionHeader
           subtitle="Contact us"

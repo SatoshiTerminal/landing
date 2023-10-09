@@ -13,7 +13,7 @@ import SectionHeader from '@/components/SectionHeader';
 export default function OverviewHome() {
 
   return (
-    <section id='section-1' className={`${styles.overview} home-sect-p`}>
+    <section id='overview' className={`${styles.overview} home-sect-p`}>
       <Image
         src="/images/home/overview/bitcoin-left.png"
         alt="bitcoin"

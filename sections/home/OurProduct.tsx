@@ -11,7 +11,7 @@ import { ourProductList } from '@/data/ourProductData';
 export default function OurProduct() {
 
   return (
-    <section id="section-4" className={`${styles.ourProduct} home-sect-p`}>
+    <section id="product" className={`${styles.ourProduct} home-sect-p`}>
       <div className="container-xl">
         {/* Header start */}
         <div className={styles.header}>

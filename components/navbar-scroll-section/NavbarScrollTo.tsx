@@ -47,29 +47,28 @@ const Navbar = () => {
   };
 
   // Add class active to Link on scroll
-  // Delete it, works not correctly
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const currentScrollY = window.scrollY;
-  //     setScrollPosition(currentScrollY);
-  //     const sections = document.querySelectorAll('section');
-  //     sections.forEach((section) => {
-  //       const sectionTop = section.offsetTop;
-  //       const sectionHeight = section.clientHeight;
-  //       if (scrollPosition >= sectionTop - sectionHeight / 3) {
-  //         const sectionId = section.getAttribute('id');
-  //         document.querySelectorAll(`.${styles.menu} a`).forEach((link) => {
-  //           link.classList.remove(`${styles.active}`);
-  //           if (link.getAttribute('href') === `#${sectionId}`) {
-  //             link.classList.add(`${styles.active}`);
-  //           }
-  //         });
-  //       }
-  //     });
-  //   };
-  //   window.addEventListener('scroll', handleScroll, { passive: true });
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, [scrollPosition]);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollPosition(currentScrollY);
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollPosition >= sectionTop - sectionHeight / 3) {
+          const sectionId = section.getAttribute('id');
+          document.querySelectorAll(`.${styles.menu} a`).forEach((link) => {
+            link.classList.remove(`${styles.active}`);
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add(`${styles.active}`);
+            }
+          });
+        }
+      });
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrollPosition]);
 
   return (
     <nav

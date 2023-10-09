@@ -9,7 +9,7 @@ import { ourRoadmapData } from '@/data/ourRoadmapData';
 
 export default function OurRoadmap() {
   return (
-    <section id="section-6" className={`${styles.ourRoadmap} home-sect-p`}>
+    <section id="roadmap" className={`${styles.ourRoadmap} home-sect-p`}>
       <div className="container">
         <SectionHeader
           cssClassName={styles.ourRoadmapHeader}
