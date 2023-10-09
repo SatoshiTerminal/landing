@@ -82,7 +82,7 @@
 
 /* Decoration line for Top */
 .roadmapItem:nth-child(2n + 1)::before {
-  top: -44px;
+  top: -30px;
 }
 /* Decoration line for Bottom */
 .roadmapItem:nth-child(2n) .itemContent {
@@ -90,12 +90,12 @@
 }
 /* Line top */
 .roadmapItem:nth-child(2n + 1) .itemContent {
-  bottom: 44px;
+  bottom: 50px;
   transform: translateY(-100%) translateX(-18%);
 }
 /* Line bottom */
 .roadmapItem:nth-child(2n) .itemContent {
-  top: 47px;
+  top: 50px;
   transform: translateX(-18%);
 }
 
