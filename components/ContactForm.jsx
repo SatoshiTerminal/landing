@@ -22,10 +22,9 @@ export default function ContactForm( { cssClass } ) {
 
   // Please update the Access Key in the .env
 
-  // Just for testing purpose, you can use the following Access Key
-  // It send to my email 0vqe5z6q@duck.com , but not to the client email
+  //  Api key for mail: contact@satoshiterminal.io
   const apiKey =
-    process.env.WEB3FORMS_ACCESS_KEY || 'd99962bf-a294-4104-8ec5-d1109b340b23';
+    process.env.WEB3FORMS_ACCESS_KEY || '40f64b6f-62f6-4e8d-86c6-3bf4adf7b196';
 
   const { submit: onSubmit } = useWeb3Forms({
     access_key: apiKey,
