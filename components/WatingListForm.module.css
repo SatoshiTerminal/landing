@@ -88,16 +88,17 @@
   padding: 5px;
   min-height: 40px;
   border-radius: 15px 15px 15px 15px;
-  background-color: var(--secondary-color);
+  background-color: #21212a;
   font-size: 16px;
   font-family: var(--font-outfit);
   color: var(--text-color);
+  border: none;
 }
 .formSelect:focus {
   border-radius: 15px 15px 0 0;
   outline: none;
   border: 2px solid var(--primary-color);
-  background-color: #3c87c9;
+  background-color: #4c4c4d;
 }
 
 .formError {
@@ -257,7 +258,7 @@
   }
 
   .formTextarea {
-    margin-bottom: 50px;
+    margin-bottom: 55px;
   }
 
   .closeIcon {

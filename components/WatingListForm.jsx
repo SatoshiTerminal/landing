@@ -8,6 +8,7 @@ import styles from './WatingListForm.module.css';
 // Icons
 import { AiOutlineClose } from 'react-icons/ai';
 
+// Who are you select options
 const otions = [
   // option 1
   { value: 'Private Investor', label: 'Private Investor' },
@@ -269,12 +270,12 @@ export default function WatingListForm() {
           {/* Who are you? start */}
           <div className={styles.formItem}>
             <label className={styles.formLabel}>
-              Who are you? *
+              Who are you (optional)
               <select
                 className={styles.formSelect}
                 name="select"
                 {...register('whoAreYou', {
-                  required: 'Select an option',
+                  required: false,
                 })}
               >
                 <option value="">None</option>
@@ -285,11 +286,12 @@ export default function WatingListForm() {
                 ))}
               </select>
             </label>
-            {errors.whoAreYou && (
+            {/* Uncomment if this will be required (this is message for select) */}
+            {/* {errors.whoAreYou && (
               <div className={styles.formError}>
                 <small>{errors.whoAreYou.message}</small>
               </div>
-            )}
+            )} */}
           </div>
           {/* Who are you? end */}
           {/* How did you hear about us ? start */}
@@ -316,29 +318,7 @@ export default function WatingListForm() {
             )}
           </div>
           {/* How did you hear about us ? end */}
-          {/* Reason for Request start */}
-          <div className={styles.formTextarea}>
-            <label className={styles.formLabel}>
-              Reason for Request *
-              <textarea
-                className={`${styles.formInput} ${styles.formTextareaIput} ${
-                  errors.name ? 'form-error' : 'form-success'
-                }`}
-                type="email"
-                placeholder="Reason for Request*"
-                name="message"
-                {...register('messageReason', {
-                  required: 'Please enter your message',
-                })}
-              />
-            </label>
-            {errors.messageReason && (
-              <div className={styles.formError}>
-                <small>{errors.messageReason.message}</small>
-              </div>
-            )}
-          </div>
-          {/* Reason for Request end */}
+
           {isSubmitSuccessful && isSuccess && (
             <div className={`${styles.formMsgSent} ${styles.formSuccess}`}>
               {message || 'Success. Message sent successfully'} 🚀
