@@ -12,7 +12,6 @@ import { navbarScrollTo } from '@/data/navbarScrollTo';
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-
   const [goingDown, setGoingDown] = useState(false);
 
   // Show hide navbar on scroll
@@ -53,8 +52,8 @@ const Navbar = () => {
       setScrollPosition(currentScrollY);
       const sections = document.querySelectorAll('section');
       sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+        const sectionTop = section.offsetTop + 800; // add top padding
+        const sectionHeight = section.clientHeight - 240; // subtract scection top and bottom padding
         if (scrollPosition >= sectionTop - sectionHeight / 3) {
           const sectionId = section.getAttribute('id');
           document.querySelectorAll(`.${styles.menu} a`).forEach((link) => {
