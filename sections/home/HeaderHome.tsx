@@ -44,7 +44,7 @@ export default function HeaderHome() {
 
           <p className={styles.textDesc}>
             We are planning to deploy a cryptocurrency version of the Bloomberg
-            terminal, ingineered in the 1980’s by Michael Bloomberg{' '}
+            terminal, engineered in the 1980’s by Michael Bloomberg{' '}
           </p>
         </div>
         {/* Buttons */}
