@@ -45,6 +45,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://satoshiterminal.io',
+  },
 };
 
 export default function RootLayout({
