@@ -302,7 +302,7 @@ export default function WatingListForm() {
                 className={`${styles.formInput} ${styles.formTextareaIput} ${
                   errors.name ? 'form-error' : 'form-success'
                 }`}
-                type="email"
+                type="text"
                 placeholder="How did you hear about us?*"
                 name="message"
                 {...register('messageHearAbout', {
