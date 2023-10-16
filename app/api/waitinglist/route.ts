@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
       whoAreYou,
       messageHearAbout,
     };
-    // TODO: Add code to save the data to the waiting list
+
 
     return NextResponse.json(
       {
