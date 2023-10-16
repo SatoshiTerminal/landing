@@ -2,7 +2,7 @@
 import { WaitingListFormData } from '@/components/WaitingListForm';
 
 export function sendEmail(data: WaitingListFormData) {
-  const apiEndpoint = 'http://localhost:3000/api/waiting-list';
+  const apiEndpoint = '/api/waitinglist';
 
   fetch(apiEndpoint, {
     method: 'POST',
@@ -10,7 +10,7 @@ export function sendEmail(data: WaitingListFormData) {
   })
     .then((res) => res.json())
     .then((response) => {
-      console.log(response.message);
+      console.log(response.message, response.data);
     })
     .catch((err) => {
       console.log(err);

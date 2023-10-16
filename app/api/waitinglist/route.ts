@@ -3,55 +3,70 @@ import { type NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { firstName, lastName, email, phoneNumber, country, whoAreYou, messageHearAbout } = body;
+    const {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      country,
+      whoAreYou,
+      messageHearAbout,
+    } = body;
 
     // Check if required fields are present
     if (!firstName) {
-      return new NextResponse(
-        JSON.stringify({
+      return NextResponse.json(
+        {
           success: false,
           errors: [{ field: 'firstName', message: 'First name is required' }],
           message: 'Input validation failed.',
-        }),
+        },
         { status: 400 }
       );
     }
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return new NextResponse(
-        JSON.stringify({
+      return NextResponse.json(
+        {
           success: false,
           errors: [{ field: 'email', message: 'Please enter a valid email' }],
           message: 'Input validation failed.',
-        }),
+        },
         { status: 400 }
       );
     }
 
     // Add the user to the waiting list
-    const data = { firstName, lastName, email, phoneNumber, country, whoAreYou, messageHearAbout };
+    const data = {
+      firstName,
+      lastName,
+      email,
+      phoneNumber,
+      country,
+      whoAreYou,
+      messageHearAbout,
+    };
     // TODO: Add code to save the data to the waiting list
 
-    return new NextResponse(
-      JSON.stringify({
+    return NextResponse.json(
+      {
         success: true,
         data,
         message: "You're added to our waiting list. Thank you!",
-      }),
+      },
       { status: 200 }
     );
   } catch (error) {
     console.error(error);
-    return new NextResponse(
-      JSON.stringify({
+    return NextResponse.json(
+      {
         success: false,
         message: 'Something went wrong. Please try again later.',
-      }),
+      },
       { status: 500 }
     );
   }
 }
-
 
 // POST /api/waiting-list
 
