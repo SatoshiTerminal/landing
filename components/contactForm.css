@@ -41,8 +41,9 @@
 }
 
 .form-input.form-error {
-  border: 2px solid red;
+  border: 1px solid rgb(212, 58, 58) !important;
 }
+
 
 .form-input[type='text'],
 .form-input[type='email'] {
@@ -104,6 +105,7 @@
   
 }
 .form-textarea-iput {
+  color: var(--text-color);
   padding: 20px;
   background-color: #21212A;
   outline: none;

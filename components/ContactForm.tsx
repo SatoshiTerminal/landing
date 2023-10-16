@@ -6,15 +6,26 @@ import useWeb3Forms from '@web3forms/react';
 // Css import normal
 import './contactForm.css';
 
+type ContactFormData = {
+  name: string;
+  email: string;
+  message: string;
+  botcheck: boolean;
+};
 
-export default function ContactForm( { cssClass } ) {
+type ContactFormProps = {
+  cssClass: string;
+}
+
+
+export default function ContactForm(  {cssClass} : ContactFormProps ) {
   // ============= Original code start =============
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors, isSubmitSuccessful },
-  } = useForm({
+  } = useForm<ContactFormData>({
     mode: 'onTouched',
   });
   const [isSuccess, setIsSuccess] = useState(false);
@@ -22,7 +33,8 @@ export default function ContactForm( { cssClass } ) {
 
   // Please update the Access Key in the .env
 
-  //  Api key for mail: contact@satoshiterminal.io
+     // !! apiKey for testing d99962bf-a294-4104-8ec5-d1109b340b23
+  //  Api key for Deploy - mail: contact@satoshiterminal.io  40f64b6f-62f6-4e8d-86c6-3bf4adf7b196
   const apiKey =
     process.env.WEB3FORMS_ACCESS_KEY || '40f64b6f-62f6-4e8d-86c6-3bf4adf7b196';
 
@@ -65,7 +77,6 @@ export default function ContactForm( { cssClass } ) {
           }`}
           type="text"
           placeholder="Your name*"
-          name="name"
           {...register('name', {
             required: 'Full name is required',
             maxLength: 80,
@@ -82,11 +93,10 @@ export default function ContactForm( { cssClass } ) {
           id="email_address"
           autoComplete="false"
           className={`form-input ${
-            errors.name ? 'form-error' : 'form-success'
+            errors.email ? 'form-error' : 'form-success'
           }`}
           type="email"
           placeholder="Your email*"
-          name="email"
           {...register('email', {
             required: 'Please enter your email',
             pattern: {
@@ -104,11 +114,9 @@ export default function ContactForm( { cssClass } ) {
       <div className="form-textarea">
         <textarea
           className={`form-input form-textarea-iput ${
-            errors.name ? 'form-error' : 'form-success'
+            errors.message ? 'form-error' : ''
           }`}
-          type="email"
           placeholder="Your Message*"
-          name="message"
           {...register('message', {
             required: 'Please enter your message',
           })}
