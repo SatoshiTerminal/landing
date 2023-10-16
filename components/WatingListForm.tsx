@@ -42,6 +42,17 @@ const otions = [
   { value: 'None of these/Other', label: 'None of these/Other' },
 ];
 
+type WaitingListFormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber?: string;
+  country?: string;
+  whoAreYou?: string;
+  messageHearAbout: string;
+  botcheck: boolean;
+};
+
 export default function WatingListForm() {
   // Waiting list form
   const {
@@ -49,16 +60,15 @@ export default function WatingListForm() {
     handleSubmit,
     reset,
     formState: { errors, isSubmitSuccessful },
-  } = useForm({
+  } = useForm<WaitingListFormData>({
     mode: 'onTouched',
   });
   const [isSuccess, setIsSuccess] = useState(false);
   const [message, setMessage] = useState('');
 
-  // Please update the Access Key in the .env
+   // !! apiKey for testing d99962bf-a294-4104-8ec5-d1109b340b23
+  //  Api key for Deploy - mail: contact@satoshiterminal.io  40f64b6f-62f6-4e8d-86c6-3bf4adf7b196
 
-  // Just for testing purpose, you can use the following Access Key
-  //  Api key for mail: contact@satoshiterminal.io
   const apiKey =
     process.env.WEB3FORMS_ACCESS_KEY || '40f64b6f-62f6-4e8d-86c6-3bf4adf7b196';
 
@@ -128,11 +138,12 @@ export default function WatingListForm() {
               <input
                 autoComplete="false"
                 className={`${styles.formInput} ${
-                  errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+                  errors.firstName
+                    ? `${styles.formError}`
+                    : ''
                 }`}
                 type="text"
                 placeholder="First name*"
-                name="First name"
                 {...register('firstName', {
                   required: 'First name is required',
                   maxLength: {
@@ -156,11 +167,12 @@ export default function WatingListForm() {
               <input
                 autoComplete="false"
                 className={`${styles.formInput} ${
-                  errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+                  errors.lastName
+                    ? `${styles.formError}`
+                    : ''
                 }`}
                 type="text"
                 placeholder="Last name*"
-                name="Last name"
                 {...register('lastName', {
                   required: 'Last name is required',
                   maxLength: {
@@ -184,11 +196,10 @@ export default function WatingListForm() {
               <input
                 autoComplete="false"
                 className={`${styles.formInput} ${
-                  errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+                  errors.email ? `${styles.formError}` : ''
                 }`}
                 type="email"
                 placeholder="Your email*"
-                name="Email Address"
                 {...register('email', {
                   required: 'Please enter your email',
                   pattern: {
@@ -213,11 +224,12 @@ export default function WatingListForm() {
               <input
                 autoComplete="false"
                 className={`${styles.formInput} ${
-                  errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+                  errors.phoneNumber
+                    ? `${styles.formError}`
+                    : ''
                 }`}
                 type="text"
                 placeholder="Phone number (optional)"
-                name="Phone number"
                 {...register('phoneNumber', {
                   required: false,
                   minLength: {
@@ -245,11 +257,12 @@ export default function WatingListForm() {
               <input
                 autoComplete="false"
                 className={`${styles.formInput} ${
-                  errors.name ? `${styles.formError}` : `${styles.formSuccess}`
+                  errors.country
+                    ? `${styles.formError}`
+                    : ''
                 }`}
                 type="text"
                 placeholder="Country (optional)"
-                name="Last name"
                 {...register('country', {
                   required: false,
                   maxLength: {
@@ -273,7 +286,6 @@ export default function WatingListForm() {
               Who are you (optional)
               <select
                 className={styles.formSelect}
-                name="select"
                 {...register('whoAreYou', {
                   required: false,
                 })}
@@ -300,11 +312,11 @@ export default function WatingListForm() {
               How did you hear about us ? *
               <textarea
                 className={`${styles.formInput} ${styles.formTextareaIput} ${
-                  errors.name ? 'form-error' : 'form-success'
+                  errors.messageHearAbout
+                    ? `${styles.formError}`
+                    : ''
                 }`}
-                type="text"
                 placeholder="How did you hear about us?*"
-                name="message"
                 {...register('messageHearAbout', {
                   required: 'Please enter your message',
                 })}

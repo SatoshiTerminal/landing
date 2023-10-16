@@ -27,8 +27,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "components/ContactForm.jsx",
-    "components/WatingListForm.jsx"
   ],
   "exclude": ["node_modules"]
 }
