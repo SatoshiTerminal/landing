@@ -2,8 +2,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import useWeb3Forms from '@web3forms/react';
 import styles from './WaitingListForm.module.css';
+
+// Components
+import { sendEmail } from '@/utils/send-email';
 
 // Icons
 import { AiOutlineClose } from 'react-icons/ai';
@@ -63,8 +65,6 @@ export default function WatingListForm() {
   } = useForm<WaitingListFormData>({
     mode: 'onTouched',
   });
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [message, setMessage] = useState('');
 
    // !! apiKey for testing d99962bf-a294-4104-8ec5-d1109b340b23
   //  Api key for Deploy - mail: contact@satoshiterminal.io  40f64b6f-62f6-4e8d-86c6-3bf4adf7b196
@@ -72,22 +72,11 @@ export default function WatingListForm() {
   const apiKey =
     process.env.WEB3FORMS_ACCESS_KEY || '40f64b6f-62f6-4e8d-86c6-3bf4adf7b196';
 
-  const { submit: onSubmit } = useWeb3Forms({
-    access_key: apiKey,
-    settings: {
-      from_name: 'Satoshiterminal.io - Waiting list',
-      subject: ' Message from Satoshi Terminal - Waiting list',
-    },
-    onSuccess: (msg) => {
-      setIsSuccess(true);
-      setMessage(msg);
+    function onSubmit(data: WaitingListFormData) {
+      sendEmail(data);
       reset();
-    },
-    onError: (msg) => {
-      setIsSuccess(false);
-      setMessage(msg);
-    },
-  });
+    }
+  
   // ============= Original code end =============
 
   // Wating list show hide
@@ -331,16 +320,12 @@ export default function WatingListForm() {
           </div>
           {/* How did you hear about us ? end */}
 
-          {isSubmitSuccessful && isSuccess && (
+          {isSubmitSuccessful && (
             <div className={`${styles.formMsgSent} ${styles.formSuccess}`}>
-              {message || 'Success. Message sent successfully'} 🚀
+              You're added to our waiting list. Thank you!
             </div>
           )}
-          {isSubmitSuccessful && !isSuccess && (
-            <div className={`${styles.formMsgSent} ${styles.formError}`}>
-              {message || 'Something went wrong. Please try later.'} 😞
-            </div>
-          )}
+
           <button className={`primary-btn ${styles.formBtn}`}>
             Send Message
           </button>
