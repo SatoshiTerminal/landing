@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // Components
-import WatingListForm from '@/components/WatingListForm';
+import WaitingListForm from '@/components/WaitingListForm';
 
 export default function HeaderHome() {
   return (
@@ -49,8 +49,8 @@ export default function HeaderHome() {
         </div>
         {/* Buttons */}
         <div className={styles.buttonsGroup}>
-          {/* Button "Join waiting list" list iside component WatingListForm */}
-          <WatingListForm />
+          {/* Button "Join waiting list" list iside component WaitingListForm */}
+          <WaitingListForm />
           <a
             className="primary-btn"
             target="_blank"
@@ -60,7 +60,7 @@ export default function HeaderHome() {
             Our Overview
           </a>
         </div>
-        {/* Wating list form */}
+        {/* Waiting list form */}
       </div>
     </header>
   );

@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import useWeb3Forms from '@web3forms/react';
-import styles from './WatingListForm.module.css';
+import styles from './WaitingListForm.module.css';
 
 // Icons
 import { AiOutlineClose } from 'react-icons/ai';
@@ -109,7 +109,7 @@ export default function WatingListForm() {
     // Button show hide
     <React.Fragment>
       <button onClick={handleShow} className="primary-btn">
-        Join wating list
+        Join waiting list
       </button>
 
       <div

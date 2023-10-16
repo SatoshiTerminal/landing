@@ -65,12 +65,12 @@
   width: 417px;
   height: 331px;
 }
-/* Delete z index, becouse posible make problem with Wating List */
+/* Delete z index, becouse posible make problem with Waiting List */
 .imgReactangle2 {
   object-fit: contain;
   /* z-index: 2; */
 }
-/* Delete z index, becouse posible make problem with Wating List */
+/* Delete z index, becouse posible make problem with Waiting List */
 .imgMain {
   width: 466px;
   height: 231px;

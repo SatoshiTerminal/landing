@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Components
-import WatingListForm from '@/components/WatingListForm';
+import WaitingListForm from '@/components/WaitingListForm';
 
 // Icons
 import { AiOutlineYoutube } from 'react-icons/ai';
@@ -161,8 +161,8 @@ export default function Footer() {
               for this innovative solution that will change the world of
               cryptocurrencies forever.
             </p>
-            {/* Button "Join waiting list" list iside component WatingListForm */}
-            <WatingListForm />
+            {/* Button "Join waiting list" list iside component WaitingListForm */}
+            <WaitingListForm />
           </div>
           {/* Column 4 end */}
         </div>
