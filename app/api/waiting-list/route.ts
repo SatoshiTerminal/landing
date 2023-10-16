@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
 
     // Check if required fields are present
     if (!firstName) {
-      return new Response(
+      return new NextResponse(
         JSON.stringify({
           success: false,
           errors: [{ field: 'firstName', message: 'First name is required' }],
@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return new Response(
+      return new NextResponse(
         JSON.stringify({
           success: false,
           errors: [{ field: 'email', message: 'Please enter a valid email' }],
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const data = { firstName, lastName, email, phoneNumber, country, whoAreYou, messageHearAbout };
     // TODO: Add code to save the data to the waiting list
 
-    return new Response(
+    return new NextResponse(
       JSON.stringify({
         success: true,
         data,
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     console.error(error);
-    return new Response(
+    return new NextResponse(
       JSON.stringify({
         success: false,
         message: 'Something went wrong. Please try again later.',

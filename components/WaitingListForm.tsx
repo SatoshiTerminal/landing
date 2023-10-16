@@ -322,7 +322,7 @@ export default function WatingListForm() {
 
           {isSubmitSuccessful && (
             <div className={`${styles.formMsgSent} ${styles.formSuccess}`}>
-              You're added to our waiting list. Thank you!
+              You`re added to our waiting list. Thank you!
             </div>
           )}
 
