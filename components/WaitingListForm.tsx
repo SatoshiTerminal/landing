@@ -52,7 +52,7 @@ export type WaitingListFormData = {
   country?: string;
   whoAreYou?: string;
   messageHearAbout: string;
-  botcheck: boolean;
+  // botcheck: boolean;
 };
 
 export default function WatingListForm() {
@@ -113,11 +113,11 @@ export default function WatingListForm() {
           </div>
           <h3 className={styles.formTitle}>Join the waiting list</h3>
           {/* Botcheck - hidden input */}
-          <input
+          {/* <input
             type="checkbox"
             style={{ display: 'none' }}
             {...register('botcheck')}
-          ></input>
+          ></input> */}
 
           {/* Form Action start */}
           {/* First name */}
