@@ -2,7 +2,7 @@
 import { WaitingListFormData } from '@/components/WaitingListForm';
 
 export function sendEmail(data: WaitingListFormData) {
-  const apiEndpoint = '/api/waitinglist';
+  const apiEndpoint = '/api/waiting-list';
 
   fetch(apiEndpoint, {
     method: 'POST',
