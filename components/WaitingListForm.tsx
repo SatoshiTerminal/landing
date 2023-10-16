@@ -42,7 +42,7 @@ const otions = [
   { value: 'None of these/Other', label: 'None of these/Other' },
 ];
 
-type WaitingListFormData = {
+export type WaitingListFormData = {
   firstName: string;
   lastName: string;
   email: string;
