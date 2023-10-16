@@ -8,6 +8,10 @@ export function sendEmail(data: WaitingListFormData) {
   fetch(apiEndpoint, {
     method: 'POST',
     body: JSON.stringify(data),
+    // Dont delete header 'Content-Type' because it will cause an error POST 400 (Bad Request)
+    headers: {
+      'Content-Type': 'application/json',
+    },
   })
     .then((res) => res.json())
     .then((response) => {

@@ -14,27 +14,28 @@ export async function POST(request: NextRequest) {
     } = body;
 
     // Check if required fields are present
-    // if (!firstName) {
-    //   return NextResponse.json(
-    //     {
-    //       success: false,
-    //       errors: [{ field: 'firstName', message: 'First name is required' }],
-    //       message: 'Input validation failed.',
-    //     },
-    //     { status: 400 }
-    //   );
-    // }
 
-    // if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    //   return NextResponse.json(
-    //     {
-    //       success: false,
-    //       errors: [{ field: 'email', message: 'Please enter a valid email' }],
-    //       message: 'Input validation failed.',
-    //     },
-    //     { status: 400 }
-    //   );
-    // }
+    if (!firstName) {
+      return NextResponse.json(
+        {
+          success: false,
+          errors: [{ field: 'firstName', message: 'First name is required' }],
+          message: 'Input validation failed.',
+        },
+        { status: 400 }
+      );
+    }
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return NextResponse.json(
+        {
+          success: false,
+          errors: [{ field: 'email', message: 'Please enter a valid email' }],
+          message: 'Input validation failed.',
+        },
+        { status: 400 }
+      );
+    }
 
     // Add the user to the waiting list
     const data = {
@@ -67,7 +68,7 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
+// !! CODE EXAMPLES FROM James
 // POST /api/waiting-list
 
 // Body:
