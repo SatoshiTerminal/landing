@@ -290,6 +290,17 @@
     grid-column: auto;
     grid-row: 1;
   }
+
+  .numberItem {
+    margin-top: -60px;
+    width: 70px;
+    height: 80px;
+  }
+
+  .number {
+    font-size: 30px;
+    left: 40%;
+  }
 }
 
 @media only screen and (max-width: 576px) {
