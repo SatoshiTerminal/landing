@@ -216,4 +216,8 @@
   .roadmapItem:nth-child(2n + 1) .itemContent {
     left: 110px;
   }
+
+  .itemContent {
+    width: 250px;
+  }
 }
