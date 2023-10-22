@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import styles from './WaitingListForm.module.css';
 
 // Components
-import { sendEmail } from '@/utils/send-email';
+import { WaitingListSend } from '@/utils/waiting-list-send';
 
 // Icons
 import { AiOutlineClose } from 'react-icons/ai';
@@ -66,17 +66,11 @@ export default function WatingListForm() {
     mode: 'onTouched',
   });
 
-   // !! apiKey for testing d99962bf-a294-4104-8ec5-d1109b340b23
-  //  Api key for Deploy - mail: contact@satoshiterminal.io  40f64b6f-62f6-4e8d-86c6-3bf4adf7b196
+  function onSubmit(data: WaitingListFormData) {
+    WaitingListSend(data);
+    reset();
+  }
 
-  const apiKey =
-    process.env.WEB3FORMS_ACCESS_KEY || '40f64b6f-62f6-4e8d-86c6-3bf4adf7b196';
-
-    function onSubmit(data: WaitingListFormData) {
-      sendEmail(data);
-      reset();
-    }
-  
   // ============= Original code end =============
 
   // Wating list show hide
@@ -127,9 +121,7 @@ export default function WatingListForm() {
               <input
                 autoComplete="false"
                 className={`${styles.formInput} ${
-                  errors.firstName
-                    ? `${styles.formError}`
-                    : ''
+                  errors.firstName ? `${styles.formError}` : ''
                 }`}
                 type="text"
                 placeholder="First name*"
@@ -156,9 +148,7 @@ export default function WatingListForm() {
               <input
                 autoComplete="false"
                 className={`${styles.formInput} ${
-                  errors.lastName
-                    ? `${styles.formError}`
-                    : ''
+                  errors.lastName ? `${styles.formError}` : ''
                 }`}
                 type="text"
                 placeholder="Last name*"
@@ -213,9 +203,7 @@ export default function WatingListForm() {
               <input
                 autoComplete="false"
                 className={`${styles.formInput} ${
-                  errors.phoneNumber
-                    ? `${styles.formError}`
-                    : ''
+                  errors.phoneNumber ? `${styles.formError}` : ''
                 }`}
                 type="text"
                 placeholder="Phone number (optional)"
@@ -246,9 +234,7 @@ export default function WatingListForm() {
               <input
                 autoComplete="false"
                 className={`${styles.formInput} ${
-                  errors.country
-                    ? `${styles.formError}`
-                    : ''
+                  errors.country ? `${styles.formError}` : ''
                 }`}
                 type="text"
                 placeholder="Country (optional)"
@@ -301,9 +287,7 @@ export default function WatingListForm() {
               How did you hear about us ? *
               <textarea
                 className={`${styles.formInput} ${styles.formTextareaIput} ${
-                  errors.messageHearAbout
-                    ? `${styles.formError}`
-                    : ''
+                  errors.messageHearAbout ? `${styles.formError}` : ''
                 }`}
                 placeholder="How did you hear about us?*"
                 {...register('messageHearAbout', {

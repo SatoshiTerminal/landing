@@ -1,7 +1,7 @@
 
 import { WaitingListFormData } from '@/components/WaitingListForm';
 
-export function sendEmail(data: WaitingListFormData) {
+export function WaitingListSend(data: WaitingListFormData) {
   // const apiEndpoint = '/api/waiting-list';
   const apiEndpoint = 'https://satoshiterminal.io/api/waiting-list';
 
