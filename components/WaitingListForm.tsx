@@ -55,7 +55,7 @@ export type WaitingListFormData = {
   // botcheck: boolean;
 };
 
-export default function WatingListForm() {
+export default function WaitingListForm() {
   // Waiting list form
   const {
     register,
@@ -73,7 +73,7 @@ export default function WatingListForm() {
 
   // ============= Original code end =============
 
-  // Wating list show hide
+  // Waiting list show hide
   const [show, setShow] = useState(false);
   // Show and disable scroll
   const handleShow = () => {
@@ -96,13 +96,13 @@ export default function WatingListForm() {
       </button>
 
       <div
-        className={`${styles.watingList} ${
+        className={`${styles.waitingList} ${
           show ? `${styles.show}` : `${styles.hide}`
         }`}
       >
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           {/* close button */}
-          <div onClick={handleClose} aria-label="close form wating list">
+          <div onClick={handleClose} aria-label="close form Waiting list">
             <AiOutlineClose className={styles.closeIcon} />
           </div>
           <h3 className={styles.formTitle}>Join the waiting list</h3>

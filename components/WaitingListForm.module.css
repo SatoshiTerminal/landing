@@ -1,5 +1,5 @@
-/* Wating list form styles */
-.watingList {
+/* Waiting list form styles */
+.waitingList {
   position: fixed;
   /* padding: 50px; */
   top: 0;
@@ -22,7 +22,7 @@
   padding-bottom: 100px;
 }
 
-.watingList .show {
+.waitingList .show {
   display: block;
 }
 
@@ -192,7 +192,7 @@
 }
 
 @media only screen and (max-width: 1450px) {
-  .watingList {
+  .waitingList {
     padding-top: 50px;
     padding-left: 30px;
     padding-right: 30px;
@@ -244,7 +244,7 @@
 }
 
 @media only screen and (max-width: 576px) {
-  .watingList {
+  .waitingList {
     padding-top: 30px;
     padding-left: 20px;
     padding-right: 20px;
