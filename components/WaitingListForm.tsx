@@ -94,11 +94,17 @@ export default function WaitingListForm() {
       },
       body: JSON.stringify({
         token,
-        sitekey: '6LdhWssoAAAAAECdkp7-1z42tWiCcCAuLXhJ4SqE',
+        sitekey: `${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`,
       }),
     });
-
-    const data = await response.json();
+    const text = await response.text();
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (err) {
+      console.error('Error parsing JSON:', err);
+      return;
+    }
 
     if (data.success) {
       return true;
@@ -119,7 +125,6 @@ export default function WaitingListForm() {
       alert('Please verify you are human!');
       return;
     }
-    console.log(data);
     // Send data to Google Sheets
     WaitingListSend(data);
     reset();
