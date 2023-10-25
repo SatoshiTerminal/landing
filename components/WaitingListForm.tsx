@@ -5,13 +5,13 @@ import { useForm } from 'react-hook-form';
 import styles from './WaitingListForm.module.css';
 // Google captcha v2
 import ReCAPTCHA from 'react-google-recaptcha';
-import { verifyCaptcha } from '@/utils/recaptcha-server-action';
 
 // Components
 import { WaitingListSend } from '@/utils/waiting-list-send';
 
 // Icons
 import { AiOutlineClose } from 'react-icons/ai';
+import { type } from 'os';
 
 // Who are you select options
 const otions = [
@@ -84,17 +84,42 @@ export default function WaitingListForm() {
 
   // ========== ReCAPTCHA and onSubmit Function start ==========
   const captchaRef = useRef<ReCAPTCHA>(null);
-  const [isVerified, setIsverified] = useState<boolean>(false);
 
-  // On submit function Add ReCAPTCHA verification + send data to Google Sheets
-  async function onSubmit(data: WaitingListFormData, token: any) {
-    await verifyCaptcha(token)
-      .then(() => setIsverified(true))
-      .catch(() => setIsverified(false));
+  async function verifyCaptcha(token: string) {
+    const response = await fetch('/api/recaptcha', {
+      method: 'POST',
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        token,
+        sitekey: '6LdhWssoAAAAAECdkp7-1z42tWiCcCAuLXhJ4SqE',
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  async function onSubmit(data: WaitingListFormData) {
+    const token = captchaRef.current?.getValue();
+    if (!token) {
+      return alert('Please complete the captcha');
+    }
+    // Verify captcha token
+    const isVerified = await verifyCaptcha(token);
+    // If not verified
     if (!isVerified) {
-      captchaRef.current?.reset();
+      alert('Please verify you are human!');
       return;
     }
+    console.log(data);
     // Send data to Google Sheets
     WaitingListSend(data);
     reset();
@@ -322,19 +347,13 @@ export default function WaitingListForm() {
             ref={captchaRef}
             theme="dark"
           />
-          {/* Message not verified */}
-          {/* {!isVerified && (
-            <div className={`${styles.formMsgSent} ${styles.formError}`}>
-              Please verify you are human!
-            </div>
-          )} */}
+
           {/* Message sent */}
           {isSubmitSuccessful && (
             <div className={`${styles.formMsgSent} ${styles.formSuccess}`}>
               You`re added to our waiting list. Thank you!
             </div>
           )}
-      
 
           <button className={`primary-btn ${styles.formBtn}`}>
             Send Message
