@@ -4,8 +4,8 @@ import axios from 'axios';
 const NEXT_PUBLIC_CAPTCHA_SECRET_KEY =
   process.env.NEXT_PUBLIC_CAPTCHA_SECRET_KEY;
 
-export default async function checkRecaptcha(token: any) {
-
+  export async function POST(request: Request) {
+  const token  = request.body;
   try {
     const res = await axios.post(
       `https://www.google.com/recaptcha/api/siteverify?secret=${NEXT_PUBLIC_CAPTCHA_SECRET_KEY}&response=${token}`,
@@ -17,7 +17,10 @@ export default async function checkRecaptcha(token: any) {
     );
 
     if (res.data.success) {
-      return "success!"
+      return NextResponse.json(
+        { success: 'Valid Captcha' },
+        { status: 200 }
+      )
     } else {
       return NextResponse.json(
         { error: 'Invalid Captcha' },

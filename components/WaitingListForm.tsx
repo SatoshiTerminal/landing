@@ -96,12 +96,11 @@ export default function WaitingListForm() {
         sitekey: `${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`,
       }),
     });
-    const data = await response.ok && await response.json();
-    if (data === 'success') {
-      return true;
-    } else {
+    const data = await response.json();
+    if (!data) {
       return false;
     }
+    return data.success;
   }
 
   async function onSubmit(data: WaitingListFormData) {
