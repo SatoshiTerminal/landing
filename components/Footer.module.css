@@ -61,6 +61,7 @@
 
 .socialLinks {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -135,7 +136,7 @@
   .content {
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 60px;
+    row-gap: 40px;
     column-gap: 50px;
   }
 
