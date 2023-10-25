@@ -1,11 +1,10 @@
-import { NextRequest, NextResponse } from 'next/server';
+import {  NextResponse } from 'next/server';
 import axios from 'axios';
 
 const NEXT_PUBLIC_CAPTCHA_SECRET_KEY =
   process.env.NEXT_PUBLIC_CAPTCHA_SECRET_KEY;
 
-export default async function handler(req: NextRequest) {
-  const { token }: any = req.body;
+export default async function checkRecaptcha(token: string | null) {
 
   try {
     const response = await axios.post(
