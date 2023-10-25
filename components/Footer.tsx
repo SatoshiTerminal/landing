@@ -7,10 +7,13 @@ import Image from 'next/image';
 import WaitingListForm from '@/components/WaitingListForm';
 
 // Icons
-import { AiOutlineYoutube } from 'react-icons/ai';
 import { AiOutlineTwitter } from 'react-icons/ai';
-import { BiLogoFacebook } from 'react-icons/bi';
-import { AiFillSkype } from 'react-icons/ai';
+import { AiFillLinkedin } from 'react-icons/ai';
+import { AiFillInstagram } from 'react-icons/ai';
+import { AiFillRedditCircle } from 'react-icons/ai';
+import { BiLogoDiscordAlt } from 'react-icons/bi';
+import { BiLogoTelegram } from 'react-icons/bi';
+import { BiLogoQuora } from 'react-icons/bi';
 
 type FooterDataTypes = {
   title: string;
@@ -82,19 +85,9 @@ export default function Footer() {
             </p>
 
             <div className={styles.socialLinks}>
-              {/* Item 1 */}
+              {/* Item 1 Twitter */}
               <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialItem}
-                aria-label="youtube link"
-              >
-                <AiOutlineYoutube />
-              </a>
-              {/* Item 2 */}
-              <a
-                href="https://twitter.com/"
+                href="https://twitter.com/SatoshiTerminal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialItem}
@@ -102,25 +95,65 @@ export default function Footer() {
               >
                 <AiOutlineTwitter />
               </a>
-              {/* Item 3 */}
+              {/* Item 2 Linkedin */}
               <a
-                href="https://twitter.com/"
+                href="https://www.linkedin.com/company/the-satoshi-terminal/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialItem}
-                aria-label="facebook link"
+                aria-label="linkedin link"
               >
-                <BiLogoFacebook />
+                <AiFillLinkedin />
               </a>
-              {/* Item 4 */}
+              {/* Item 3 Instagram */}
               <a
-                href="https://twitter.com/"
+                href="https://www.instagram.com/satoshiterminal/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialItem}
-                aria-label="skype link"
+                aria-label="Instagram link"
               >
-                <AiFillSkype />
+                <AiFillInstagram />
+              </a>
+              {/* Item 4 Discord */}
+              <a
+                href="https://discord.gg/Uhr2hyfn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialItem}
+                aria-label="Discord link"
+              >
+                <BiLogoDiscordAlt />
+              </a>
+              {/* Item 5 Reddit */}
+              <a
+                href="https://www.reddit.com/r/SatoshiTerminal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialItem}
+                aria-label="Discord link"
+              >
+                <AiFillRedditCircle />
+              </a>
+              {/* Item 6 Telegram */}
+              <a
+                href="https://t.me/satoshiterminal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialItem}
+                aria-label="Telegram link"
+              >
+                <BiLogoTelegram />
+              </a>
+              {/* Item 7 Quora */}
+              <a
+                href="https://www.quora.com/profile/Satoshi-Terminal-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialItem}
+                aria-label="Quora link"
+              >
+                <BiLogoQuora />
               </a>
             </div>
           </div>
