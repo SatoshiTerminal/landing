@@ -1,8 +1,11 @@
 'use client';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import styles from './WaitingListForm.module.css';
+// Google captcha v2
+import ReCAPTCHA from 'react-google-recaptcha';
+import { verifyCaptcha } from '@/utils/recaptcha-server-action';
 
 // Components
 import { WaitingListSend } from '@/utils/waiting-list-send';
@@ -66,13 +69,6 @@ export default function WaitingListForm() {
     mode: 'onTouched',
   });
 
-  function onSubmit(data: WaitingListFormData) {
-    WaitingListSend(data);
-    reset();
-  }
-
-  // ============= Original code end =============
-
   // Waiting list show hide
   const [show, setShow] = useState(false);
   // Show and disable scroll
@@ -86,7 +82,23 @@ export default function WaitingListForm() {
     document.body.style.overflow = 'unset';
   };
 
-  // Select
+  // ========== ReCAPTCHA and onSubmit Function start ==========
+  const captchaRef = useRef<ReCAPTCHA>(null);
+  const [isVerified, setIsverified] = useState<boolean>(false);
+
+  // On submit function Add ReCAPTCHA verification + send data to Google Sheets
+  async function onSubmit(data: WaitingListFormData, token: any) {
+    await verifyCaptcha(token)
+      .then(() => setIsverified(true))
+      .catch(() => setIsverified(false));
+    if (!isVerified) {
+      captchaRef.current?.reset();
+      return;
+    }
+    // Send data to Google Sheets
+    WaitingListSend(data);
+    reset();
+  }
 
   return (
     // Button show hide
@@ -303,12 +315,26 @@ export default function WaitingListForm() {
             )}
           </div>
           {/* How did you hear about us ? end */}
+          {/* Google reCAPTCHA */}
 
+          <ReCAPTCHA
+            sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+            ref={captchaRef}
+            theme="dark"
+          />
+          {/* Message not verified */}
+          {/* {!isVerified && (
+            <div className={`${styles.formMsgSent} ${styles.formError}`}>
+              Please verify you are human!
+            </div>
+          )} */}
+          {/* Message sent */}
           {isSubmitSuccessful && (
             <div className={`${styles.formMsgSent} ${styles.formSuccess}`}>
               You`re added to our waiting list. Thank you!
             </div>
           )}
+      
 
           <button className={`primary-btn ${styles.formBtn}`}>
             Send Message
