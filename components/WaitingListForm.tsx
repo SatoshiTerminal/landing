@@ -89,7 +89,6 @@ export default function WaitingListForm() {
     const response = await fetch('/api/recaptcha', {
       method: 'POST',
       headers: {
-        Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -97,16 +96,8 @@ export default function WaitingListForm() {
         sitekey: `${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`,
       }),
     });
-    const text = await response.text();
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch (err) {
-      console.error('Error parsing JSON:', err);
-      return;
-    }
-
-    if (data.success) {
+    const data = await response.ok && await response.json();
+    if (data === 'success') {
       return true;
     } else {
       return false;
