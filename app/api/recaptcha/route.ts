@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 // import axios from 'axios';
 
 const NEXT_PUBLIC_CAPTCHA_SECRET_KEY =
-  process.env.NEXT_PUBLIC_CAPTCHA_SECRET_KEY || '6LdhWssoAAAAAIdM8gGLUQ0o16DseXvNx35t2sm9';
+  process.env.NEXT_PUBLIC_CAPTCHA_SECRET_KEY;
 
 export async function POST(request: Request) {
   const { token } = await request.json();
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
     const data = await res.json();
 
-    console.log(data)
+    console.log(data);
 
     if (data.success === true) {
       return NextResponse.json({ success: 'Valid Captcha' }, { status: 200 });
