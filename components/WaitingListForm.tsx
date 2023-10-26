@@ -11,7 +11,6 @@ import { WaitingListSend } from '@/utils/waiting-list-send';
 
 // Icons
 import { AiOutlineClose } from 'react-icons/ai';
-import { type } from 'os';
 
 // Who are you select options
 const otions = [
@@ -84,16 +83,19 @@ export default function WaitingListForm() {
 
   // ========== ReCAPTCHA and onSubmit Function start ==========
   const captchaRef = useRef<ReCAPTCHA>(null);
+  const [captchaStatus, setCaptchaStatus] = useState({
+    status: false,
+    message: '',
+  });
 
   async function verifyCaptcha(token: string) {
     const response = await fetch('/api/recaptcha', {
       method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         token,
-        sitekey: `${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`,
       }),
     });
     const data = await response.json();
@@ -106,17 +108,29 @@ export default function WaitingListForm() {
   async function onSubmit(data: WaitingListFormData) {
     const token = captchaRef.current?.getValue();
     if (!token) {
-      return alert('Please complete the captcha');
+      return setCaptchaStatus({
+        status: false,
+        message: 'Please check the captcha',
+      });
     }
     // Verify captcha token
     const isVerified = await verifyCaptcha(token);
     // If not verified
     if (!isVerified) {
-      alert('Please verify you are human!');
+      setCaptchaStatus({
+        status: false,
+        message: 'Please complete the captcha',
+      });
+      captchaRef.current?.reset();
       return;
     }
     // Send data to Google Sheets
     WaitingListSend(data);
+    setCaptchaStatus({
+      status: true,
+      message: '',
+    });
+    captchaRef.current?.reset();
     reset();
   }
 
@@ -337,14 +351,21 @@ export default function WaitingListForm() {
           {/* How did you hear about us ? end */}
           {/* Google reCAPTCHA */}
 
-          <ReCAPTCHA
-            sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-            ref={captchaRef}
-            theme="dark"
-          />
+          {/* Google reCAPTCHA error message */}
+
+          <div className={styles.captcha}>
+            {captchaStatus.message.length > 0 && (
+              <div className={` ${styles.formError}`}>{captchaStatus.message}</div>
+            )}
+            <ReCAPTCHA
+              sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+              ref={captchaRef}
+              theme="dark"
+            />
+          </div>
 
           {/* Message sent */}
-          {isSubmitSuccessful && (
+            {isSubmitSuccessful && captchaStatus.status && (
             <div className={`${styles.formMsgSent} ${styles.formSuccess}`}>
               You`re added to our waiting list. Thank you!
             </div>
