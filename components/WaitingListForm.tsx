@@ -84,7 +84,6 @@ type FormResponse = {
 
 type CaptchaStatus = {
   token: string | null;
-  status: boolean;
   message: string;
 };
 
@@ -98,7 +97,7 @@ export default function WaitingListForm() {
   } = useForm<WaitingListFormData>({
     mode: "onTouched",
   });
-  const [isErrMsgActive, setIsErrMsgActive] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   // Waiting list show hide
   const [show, setShow] = useState(false);
@@ -113,11 +112,10 @@ export default function WaitingListForm() {
     document.body.style.overflow = "unset";
     updateCaptchaStatus((captchaStatus) => {
       captchaStatus.token = null;
-      captchaStatus.status = false;
       captchaStatus.message = "";
     });
     captchaRef.current?.reset();
-    setIsErrMsgActive(false);
+    setIsSuccess(false);
     reset();
   };
 
@@ -125,7 +123,6 @@ export default function WaitingListForm() {
   const captchaRef = useRef<ReCAPTCHA>(null);
   const [captchaStatus, updateCaptchaStatus] = useImmer<CaptchaStatus>({
     token: null,
-    status: false,
     message: "",
   });
 
@@ -133,7 +130,6 @@ export default function WaitingListForm() {
     try {
       if (!captchaStatus.token) {
         return updateCaptchaStatus((captchaStatus) => {
-          captchaStatus.status = false;
           captchaStatus.message = "Please complete the captcha";
         });
       }
@@ -149,9 +145,9 @@ export default function WaitingListForm() {
       }
 
       // Reset form
+      setIsSuccess(true);
       updateCaptchaStatus((captchaStatus) => {
         captchaStatus.token = null;
-        captchaStatus.status = true;
         captchaStatus.message = "";
       });
       captchaRef.current?.reset();
@@ -161,9 +157,9 @@ export default function WaitingListForm() {
         const message = (err as FormResponse).message;
 
         if (message.includes("recaptcha")) {
+          setIsSuccess(false);
           updateCaptchaStatus((captchaStatus) => {
             captchaStatus.token = null;
-            captchaStatus.status = false;
             captchaStatus.message = "Please retry the captcha";
           });
           captchaRef.current?.reset();
@@ -171,10 +167,9 @@ export default function WaitingListForm() {
         }
       }
 
-      setIsErrMsgActive(true);
+      setIsSuccess(false);
       updateCaptchaStatus((captchaStatus) => {
         captchaStatus.token = null;
-        captchaStatus.status = false;
         captchaStatus.message = "";
       });
       captchaRef.current?.reset();
@@ -407,35 +402,41 @@ export default function WaitingListForm() {
 
           {/* Google reCAPTCHA error message */}
 
-          <div className={styles.captcha}>
-            {!captchaStatus.token && captchaStatus.message.length > 0 && (
-              <div className={` ${styles.formError}`}>
-                {captchaStatus.message}
-              </div>
-            )}
-            <ReCAPTCHA
-              sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-              ref={captchaRef}
-              theme="dark"
-              onChange={onRecaptchaChange}
-            />
+          <div className={styles.formRecaptchaWrapperOuter}>
+            <div className={styles.formRecaptchaWrapperInner}>
+              {!captchaStatus.token && captchaStatus.message && (
+                <div className={` ${styles.formError}`}>
+                  {captchaStatus.message}
+                </div>
+              )}
+              <ReCAPTCHA
+                sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+                ref={captchaRef}
+                theme="dark"
+                onChange={onRecaptchaChange}
+              />
+            </div>
           </div>
 
           {/* Message sent */}
           {!isDirty &&
             !captchaStatus.token &&
             isSubmitSuccessful &&
-            captchaStatus.status && (
+            isSuccess && (
               <div className={`${styles.formMsgSent} ${styles.formSuccess}`}>
-                You&apos;re added to our waiting list. Thank you!
+                You&apos;re added to our waiting list. Thank you! 🚀
               </div>
             )}
 
-          {!isDirty && !captchaStatus.token && isErrMsgActive && (
-            <div className={`${styles.formMsgSent} ${styles.formError}`}>
-              Something went wrong. Please try again later.
-            </div>
-          )}
+          {!isDirty &&
+            !captchaStatus.token &&
+            isSubmitSuccessful &&
+            !isSuccess &&
+            !captchaStatus.message && (
+              <div className={`${styles.formMsgSent} ${styles.formError}`}>
+                Something went wrong. Please try again later. 😞
+              </div>
+            )}
 
           <button
             className={`primary-btn ${styles.formBtn}`}

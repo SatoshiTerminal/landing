@@ -186,6 +186,16 @@
   margin: 0 auto;
 }
 
+.formRecaptchaWrapperOuter {
+  width: 100%;
+  grid-column: 1 / 3;
+}
+
+.formRecaptchaWrapperInner {
+  width: fit-content;
+  margin: auto;
+}
+
 @media only screen and (max-width: 1850px) {
   .form {
     width: 50%;
@@ -241,6 +251,10 @@
   .formBtn {
     grid-column: auto;
     margin-top: 10px;
+  }
+
+  .formRecaptchaWrapperOuter {
+    grid-column: auto;
   }
 }
 
