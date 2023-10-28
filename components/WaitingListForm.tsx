@@ -403,19 +403,18 @@ export default function WaitingListForm() {
           {/* Google reCAPTCHA error message */}
 
           <div className={styles.formRecaptchaWrapperOuter}>
-            <div className={styles.formRecaptchaWrapperInner}>
-              {!captchaStatus.token && captchaStatus.message && (
-                <div className={` ${styles.formError}`}>
-                  {captchaStatus.message}
-                </div>
-              )}
-              <ReCAPTCHA
-                sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-                ref={captchaRef}
-                theme="dark"
-                onChange={onRecaptchaChange}
-              />
-            </div>
+            {!captchaStatus.token && captchaStatus.message && (
+              <div className={` ${styles.formError}`}>
+                {captchaStatus.message}
+              </div>
+            )}
+            <ReCAPTCHA
+              className={styles.formRecaptchaWrapperInner}
+              sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+              ref={captchaRef}
+              theme="dark"
+              onChange={onRecaptchaChange}
+            />
           </div>
 
           {/* Message sent */}

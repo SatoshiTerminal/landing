@@ -221,17 +221,16 @@ export default function ContactForm({ cssClass }: ContactFormProps) {
         )}
       </div>
       <div className="form-recaptcha-wrapper_outer">
-        <div className="form-recaptcha-wrapper_inner">
-          {!captchaStatus.token && captchaStatus.message && (
-            <div className="form-error">{captchaStatus.message}</div>
-          )}
-          <ReCAPTCHA
-            sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-            ref={captchaRef}
-            theme="dark"
-            onChange={onRecaptchaChange}
-          />
-        </div>
+        {!captchaStatus.token && captchaStatus.message && (
+          <div className="form-error">{captchaStatus.message}</div>
+        )}
+        <ReCAPTCHA
+          className="form-recaptcha-wrapper_inner"
+          sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+          ref={captchaRef}
+          theme="dark"
+          onChange={onRecaptchaChange}
+        />
       </div>
       {!isDirty && !captchaStatus.token && isSubmitSuccessful && isSuccess && (
         <div className="form-msg-sent form-success">
