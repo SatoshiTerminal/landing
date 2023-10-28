@@ -59,20 +59,6 @@ export default function ContactForm({ cssClass }: ContactFormProps) {
     mode: "onTouched",
   });
   const [isSuccess, setIsSuccess] = useState(false);
-  // const [message, setMessage] = useState("");
-
-  // ReCAPTCHA
-  const captchaRef = useRef<ReCAPTCHA>(null);
-  const [captchaStatus, updateCaptchaStatus] = useImmer<CaptchaStatus>({
-    token: null,
-    message: "",
-  });
-
-  const onRecaptchaChange = (token: string | null) => {
-    updateCaptchaStatus((captchaStatus) => {
-      captchaStatus.token = token;
-    });
-  };
 
   // Please update the Access Key in the .env
 
@@ -98,6 +84,19 @@ export default function ContactForm({ cssClass }: ContactFormProps) {
   //   },
   // });
   // ============= Original code end =============
+
+  // ReCAPTCHA
+  const captchaRef = useRef<ReCAPTCHA>(null);
+  const [captchaStatus, updateCaptchaStatus] = useImmer<CaptchaStatus>({
+    token: null,
+    message: "",
+  });
+
+  const onRecaptchaChange = (token: string | null) => {
+    updateCaptchaStatus((captchaStatus) => {
+      captchaStatus.token = token;
+    });
+  };
 
   async function onSubmit(data: ContactFormData) {
     try {
