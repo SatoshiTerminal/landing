@@ -47,6 +47,8 @@ export async function POST(request: Request) {
       message: "You're added to our waiting list. Thank you!",
     });
   } catch (err) {
+    console.log(err);
+
     // ZodError
     if (err instanceof ZodError) {
       return NextResponse.json(

@@ -51,6 +51,8 @@ export async function POST(request: Request) {
       message: "Success. Message sent successfully.",
     });
   } catch (err) {
+    console.log(err);
+
     // ZodError
     if (err instanceof ZodError) {
       return NextResponse.json(
