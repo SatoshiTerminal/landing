@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import styles from './HomePage.module.css';
 
 // Sections
@@ -18,19 +17,19 @@ export default function Home() {
       <HeaderHome />
       <main className={styles.main}>
         {/* Section 1 Overview */}
-        <OverviewHome />
+        {/* <OverviewHome /> */}
         {/* Section 2 Our Vision&Goal */}
-        <OurVision />
+        {/* <OurVision /> */}
         {/* Section 3 Company Mission */}
-        <CompanyMission />      
+        {/* <CompanyMission />    */}
         {/* Section 4 Our Product */}
-        <OurProduct />
+        {/* <OurProduct /> */}
         {/* Section 5 Our Pricing */}
-        <OurPrice />
+        {/* <OurPrice /> */}
         {/* Section 6 Our Roadmap */}
-        <OurRoadmap />
+        {/* <OurRoadmap /> */}
         {/* Section 7 Contact Us */}
-        <ContactUs />
+        {/* <ContactUs /> */}
       </main>
     </React.Fragment>
   );

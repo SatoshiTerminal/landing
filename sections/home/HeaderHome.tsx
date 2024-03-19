@@ -15,7 +15,7 @@ export default function HeaderHome() {
         alt="background"
         fill
         priority={true}
-      />
+      />      
       <div className={styles.content}>
         <Image
           src="/images/logo-text.svg"
